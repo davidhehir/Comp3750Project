@@ -1,0 +1,10 @@
+Text file for git commands so I don't forget
+commit to local repo:
+git push or gp
+
+commit to github
+git commit -m 'comment'
+
+git pull?
+git fetch
+
