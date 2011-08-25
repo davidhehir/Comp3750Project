@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+
+/* Function CalculateCorrelogram:
+Calculates the color correlogram
+feature vector for a given input
+image. Implements Autocorrelogram
+function only.
+  src: input img 
+  k: search distance
+  
+ */
+ void CalculateCorrelogram()			 
+ {						 
+
+			
+ } 
+
+
