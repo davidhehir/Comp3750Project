@@ -19,6 +19,7 @@ class ColorCorrelogram(object):
         self.image = imageSrc
         self.hsv = cv.CreateImage(cv.GetSize(self.image), 8, 3)
         cv.CvtColor(self.image, self.hsv, cv.CV_BGR2HSV)
+       
         
     def CalcCorrelogram(self):
         return 0
@@ -42,6 +43,7 @@ class ColorCorrelogram(object):
             for j in range(width):
                 #Get referenceColour
                 refColor = cv.Get2D(self.hsv, i, j)
+                #print "ref color: " + str(refColor)
                 # calculate near pixels of the same color
                 pixelCount[i][j] = self._calcPixelCounts(j,i,refColor,distance)
         return pixelCount
@@ -49,14 +51,14 @@ class ColorCorrelogram(object):
     def _drawCorrelogram(self,data):
         width = cv.GetSize(self.image)[0]
         height = cv.GetSize(self.image)[1]
-        scale = 1
-        hist_img = cv.CreateImage((height*scale, width*scale), 8, 3)
-        max_value = 16
-        print "plot"
+        scale = 10
+        hist_img = cv.CreateImage((width*scale, height*scale), 8, 3)
+        max_value = 8
+        print "plotting"
                  
+        cv.Rectangle(hist_img, (40,10), (49,20), cv.RGB(70,70,70))
         for v in range(height):
-            for h in range(width):
-                
+            for h in range(width):                
                 bin_val = data[v][h]
                 intensity = cv.Round(bin_val * 255 / max_value)
                 cv.Rectangle(hist_img,
@@ -64,7 +66,8 @@ class ColorCorrelogram(object):
                              ((v+1)*scale - 1, (h+1)*scale - 1),
                              cv.RGB(intensity, intensity, intensity), 
                              cv.CV_FILLED)
-        cv.SaveImage('correlogram.jpg', hist_img)
+              
+        cv.SaveImage('../TestFiles/correlogram.jpg', hist_img)
         return None
     
     def _calcPixelCounts(self,xPosition,yPosition,refColor,distance):
