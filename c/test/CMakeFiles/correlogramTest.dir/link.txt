@@ -1,0 +1,1 @@
+/usr/bin/gcc     CMakeFiles/correlogramTest.dir/ColorCorrelogramTest.c.o  -o correlogramTest -rdynamic ../src/libColorCorrelogram.a 

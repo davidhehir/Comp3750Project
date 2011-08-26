@@ -1,0 +1,11 @@
+CC = gcc
+OPENCV = `pkg-config --cflags opencv` `pkg-config --libs opencv`
+
+project.exe : main.c
+	${CC} ${OPENCV} ../src/main.c ../srcColorCorrelogram.o
+
+ColorCorrelogram.o : ColorCorrelogram.c
+	${CC} ${OPENCV} -c ColorCorrelogram.c  
+
+clean : 
+	rm -rf *.o a.out
