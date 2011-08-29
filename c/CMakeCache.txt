@@ -151,6 +151,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Dependencies for target
 ColorCorrelogram_LIB_DEPENDS:STATIC=
 
+//Dependencies for target
+OpenCVHelper_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 main_BINARY_DIR:STATIC=/home/david/Documents/src/comp3750/project/master/c
 

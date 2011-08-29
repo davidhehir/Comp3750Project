@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include "cv.h"
+
+/* OpenCVHelper: 
+Container for various opencv related functions
+that will be used throughout different program files
+ */
+
+IplImage* ConvertBGR2HSV(IplImage* input)
+{
+  int i = input.width;
+  IplImage* img = cvCreateImage((img.width,input.height),8, 3);
+  // Convert from BGR to HSV
+  CvCvtColor(input,img,CV_BGR2HSV);
+  return img;
+}
+
+
+int CompareScalar(CvScalar a, CvScalar b)
+{
+  // TODO Implement function
+  return 0;
+}
+

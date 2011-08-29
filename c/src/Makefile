@@ -64,6 +64,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/david/Documents/src/comp3750/project/master/c && $(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/CMakeFiles /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/progress.marks
@@ -110,6 +120,20 @@ ColorCorrelogram/fast:
 .PHONY : ColorCorrelogram/fast
 
 # Convenience name for target.
+src/CMakeFiles/OpenCVHelper.dir/rule:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/OpenCVHelper.dir/rule
+.PHONY : src/CMakeFiles/OpenCVHelper.dir/rule
+
+# Convenience name for target.
+OpenCVHelper: src/CMakeFiles/OpenCVHelper.dir/rule
+.PHONY : OpenCVHelper
+
+# fast build rule for target.
+OpenCVHelper/fast:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/OpenCVHelper.dir/build.make src/CMakeFiles/OpenCVHelper.dir/build
+.PHONY : OpenCVHelper/fast
+
+# Convenience name for target.
 src/CMakeFiles/main.dir/rule:
 	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
 .PHONY : src/CMakeFiles/main.dir/rule
@@ -147,6 +171,30 @@ ColorCorrelogram.c.s:
 	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/ColorCorrelogram.dir/build.make src/CMakeFiles/ColorCorrelogram.dir/ColorCorrelogram.c.s
 .PHONY : ColorCorrelogram.c.s
 
+OpenCVHelper.o: OpenCVHelper.c.o
+.PHONY : OpenCVHelper.o
+
+# target to build an object file
+OpenCVHelper.c.o:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/OpenCVHelper.dir/build.make src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o
+.PHONY : OpenCVHelper.c.o
+
+OpenCVHelper.i: OpenCVHelper.c.i
+.PHONY : OpenCVHelper.i
+
+# target to preprocess a source file
+OpenCVHelper.c.i:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/OpenCVHelper.dir/build.make src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.i
+.PHONY : OpenCVHelper.c.i
+
+OpenCVHelper.s: OpenCVHelper.c.s
+.PHONY : OpenCVHelper.s
+
+# target to generate assembly for a file
+OpenCVHelper.c.s:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/OpenCVHelper.dir/build.make src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.s
+.PHONY : OpenCVHelper.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -178,12 +226,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... ColorCorrelogram"
+	@echo "... OpenCVHelper"
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... ColorCorrelogram.o"
 	@echo "... ColorCorrelogram.i"
 	@echo "... ColorCorrelogram.s"
+	@echo "... OpenCVHelper.o"
+	@echo "... OpenCVHelper.i"
+	@echo "... OpenCVHelper.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

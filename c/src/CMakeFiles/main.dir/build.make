@@ -79,6 +79,7 @@ main_EXTERNAL_OBJECTS =
 
 src/main: src/CMakeFiles/main.dir/main.c.o
 src/main: src/libColorCorrelogram.a
+src/main: src/libOpenCVHelper.a
 src/main: src/CMakeFiles/main.dir/build.make
 src/main: src/CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable main"

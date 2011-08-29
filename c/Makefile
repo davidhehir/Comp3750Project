@@ -64,6 +64,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/CMakeFiles /home/david/Documents/src/comp3750/project/master/c/CMakeFiles/progress.marks
@@ -109,6 +119,19 @@ ColorCorrelogram/fast:
 .PHONY : ColorCorrelogram/fast
 
 #=============================================================================
+# Target rules for targets named OpenCVHelper
+
+# Build rule for target.
+OpenCVHelper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OpenCVHelper
+.PHONY : OpenCVHelper
+
+# fast build rule for target.
+OpenCVHelper/fast:
+	$(MAKE) -f src/CMakeFiles/OpenCVHelper.dir/build.make src/CMakeFiles/OpenCVHelper.dir/build
+.PHONY : OpenCVHelper/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -122,17 +145,30 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
-# Target rules for targets named correlogramTest
+# Target rules for targets named ColorCorrelogramTest
 
 # Build rule for target.
-correlogramTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 correlogramTest
-.PHONY : correlogramTest
+ColorCorrelogramTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ColorCorrelogramTest
+.PHONY : ColorCorrelogramTest
 
 # fast build rule for target.
-correlogramTest/fast:
-	$(MAKE) -f test/CMakeFiles/correlogramTest.dir/build.make test/CMakeFiles/correlogramTest.dir/build
-.PHONY : correlogramTest/fast
+ColorCorrelogramTest/fast:
+	$(MAKE) -f test/CMakeFiles/ColorCorrelogramTest.dir/build.make test/CMakeFiles/ColorCorrelogramTest.dir/build
+.PHONY : ColorCorrelogramTest/fast
+
+#=============================================================================
+# Target rules for targets named OpenCVHelperTest
+
+# Build rule for target.
+OpenCVHelperTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OpenCVHelperTest
+.PHONY : OpenCVHelperTest
+
+# fast build rule for target.
+OpenCVHelperTest/fast:
+	$(MAKE) -f test/CMakeFiles/OpenCVHelperTest.dir/build.make test/CMakeFiles/OpenCVHelperTest.dir/build
+.PHONY : OpenCVHelperTest/fast
 
 # Help Target
 help:
@@ -142,9 +178,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... ColorCorrelogram"
+	@echo "... OpenCVHelper"
 	@echo "... main"
-	@echo "... correlogramTest"
+	@echo "... ColorCorrelogramTest"
+	@echo "... OpenCVHelperTest"
 .PHONY : help
 
 

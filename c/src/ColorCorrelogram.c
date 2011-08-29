@@ -6,7 +6,7 @@ struct Correlogram
   CvMat* src; // brg representation of image (is this needed?)
   CvMat* hsv; // hsv representation of image 
   const int searchDistance; // how far away from reference pixel to search
-}
+};
 
 /* Function CalculateCorrelogram:
 Calculates the color correlogram
@@ -42,16 +42,14 @@ static int calcPixelCount(struct Correlogram correlogram, int x,int y,CvScalar r
 	pixCount += lambdaV(correlogram,x-i,y-i+1,2*i,refColor);
       if ((x + i >= 0) && (x + i < width))
 	pixCount += lambdaV(correlogram,x+i,y-i+1,2*i,refColor);
-  
     }
-
   return pixCount;
 }
 
 
 
 
-static void lambdaH(struct Correlogram correlogram,int x, int y, int k,CvScalar refColor)
+int lambdaH(struct Correlogram correlogram,int x, int y, int k,CvScalar refColor)
 {
   // tmp sum of all pixels within k distance that contain refColor
   int sum = 0;
@@ -59,15 +57,14 @@ static void lambdaH(struct Correlogram correlogram,int x, int y, int k,CvScalar 
   int maxX = cvGetSize(correlogram.src).width;
   CvScalar tmpPixel;
 
-
-  for ( i = 0; i < k ; i++ )
+  for ( i = 0; i < k; i++ )
     {
-      if ((x+i) == maxX)
-	break;
-      else if (( x + i) >= 0)
-	{
-	  tmpPixel = cvGet2D(correlogram.hsv,x,y+i);
-	  if (refColor==tmpPixel)
+      if ((x + i) >= maxX)
+        break;
+      else if ((x + i ) >= 0)
+        {
+          tmpPixel = cvGet2D( correlogram.hsv, y,x+i);
+	  if (CompareScalar(refColor,tmpPixel))
 	    sum++;
 	}
     }
@@ -77,7 +74,7 @@ static void lambdaH(struct Correlogram correlogram,int x, int y, int k,CvScalar 
 /*
 
 */
-static void lambdaV(struct Correlogram correlogram,int x, int y, int k, CvScalar refColor)
+int lambdaV(struct Correlogram correlogram,int x, int y, int k, CvScalar refColor)
 {
   int sum=0;
   int i;
@@ -86,12 +83,12 @@ static void lambdaV(struct Correlogram correlogram,int x, int y, int k, CvScalar
   
   for ( i = 0; i < k; i++ )
     {
-      if ((x + i) >= maxY)
+      if ((y + i) >= maxY)
 	break;
       else if ((y + i ) >= 0) 
 	{
 	  tmpPixel = cvGet2D( correlogram.hsv, x, y+i );
-	  if (refColor == tmpPixel)
+	  if (CompareScalar(refColor,tmpPixel))
 	    sum++;
 	}
     }

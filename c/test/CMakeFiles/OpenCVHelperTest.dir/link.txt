@@ -1,0 +1,1 @@
+/usr/bin/gcc     CMakeFiles/OpenCVHelperTest.dir/OpenCVHelperTest.c.o  -o OpenCVHelperTest -rdynamic ../src/libOpenCVHelper.a 

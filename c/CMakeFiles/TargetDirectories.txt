@@ -1,3 +1,5 @@
 /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/ColorCorrelogram.dir
-/home/david/Documents/src/comp3750/project/master/c/test/CMakeFiles/correlogramTest.dir
+/home/david/Documents/src/comp3750/project/master/c/test/CMakeFiles/ColorCorrelogramTest.dir
+/home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/OpenCVHelper.dir
+/home/david/Documents/src/comp3750/project/master/c/test/CMakeFiles/OpenCVHelperTest.dir
 /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/main.dir

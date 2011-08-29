@@ -1,0 +1,19 @@
+Start testing: Aug 28 03:32 PDT
+----------------------------------------------------------
+1/1 Testing: ColorCorrelogramTest
+1/1 Test: ColorCorrelogramTest
+Command: "/home/david/Documents/src/comp3750/project/master/c/test/ColorCorrelogramTest"
+Directory: /home/david/Documents/src/comp3750/project/master/c/test
+"ColorCorrelogramTest" start time: Aug 28 03:32 PDT
+Output:
+----------------------------------------------------------
+error, x!=7
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Failed.
+"ColorCorrelogramTest" end time: Aug 28 03:32 PDT
+"ColorCorrelogramTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 28 03:32 PDT

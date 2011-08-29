@@ -9,4 +9,6 @@
 /home/david/Documents/src/comp3750/project/master/c/src/ColorCorrelogram.c
 stdio.h
 -
+cv.h
+/home/david/Documents/src/comp3750/project/master/c/src/cv.h
 

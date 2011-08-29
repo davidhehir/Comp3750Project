@@ -64,6 +64,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/david/Documents/src/comp3750/project/master/c && $(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/CMakeFiles /home/david/Documents/src/comp3750/project/master/c/test/CMakeFiles/progress.marks
@@ -96,25 +106,39 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-test/CMakeFiles/correlogramTest.dir/rule:
-	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/correlogramTest.dir/rule
-.PHONY : test/CMakeFiles/correlogramTest.dir/rule
+test/CMakeFiles/ColorCorrelogramTest.dir/rule:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/ColorCorrelogramTest.dir/rule
+.PHONY : test/CMakeFiles/ColorCorrelogramTest.dir/rule
 
 # Convenience name for target.
-correlogramTest: test/CMakeFiles/correlogramTest.dir/rule
-.PHONY : correlogramTest
+ColorCorrelogramTest: test/CMakeFiles/ColorCorrelogramTest.dir/rule
+.PHONY : ColorCorrelogramTest
 
 # fast build rule for target.
-correlogramTest/fast:
-	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/correlogramTest.dir/build.make test/CMakeFiles/correlogramTest.dir/build
-.PHONY : correlogramTest/fast
+ColorCorrelogramTest/fast:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/ColorCorrelogramTest.dir/build.make test/CMakeFiles/ColorCorrelogramTest.dir/build
+.PHONY : ColorCorrelogramTest/fast
+
+# Convenience name for target.
+test/CMakeFiles/OpenCVHelperTest.dir/rule:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/OpenCVHelperTest.dir/rule
+.PHONY : test/CMakeFiles/OpenCVHelperTest.dir/rule
+
+# Convenience name for target.
+OpenCVHelperTest: test/CMakeFiles/OpenCVHelperTest.dir/rule
+.PHONY : OpenCVHelperTest
+
+# fast build rule for target.
+OpenCVHelperTest/fast:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/OpenCVHelperTest.dir/build.make test/CMakeFiles/OpenCVHelperTest.dir/build
+.PHONY : OpenCVHelperTest/fast
 
 ColorCorrelogramTest.o: ColorCorrelogramTest.c.o
 .PHONY : ColorCorrelogramTest.o
 
 # target to build an object file
 ColorCorrelogramTest.c.o:
-	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/correlogramTest.dir/build.make test/CMakeFiles/correlogramTest.dir/ColorCorrelogramTest.c.o
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/ColorCorrelogramTest.dir/build.make test/CMakeFiles/ColorCorrelogramTest.dir/ColorCorrelogramTest.c.o
 .PHONY : ColorCorrelogramTest.c.o
 
 ColorCorrelogramTest.i: ColorCorrelogramTest.c.i
@@ -122,7 +146,7 @@ ColorCorrelogramTest.i: ColorCorrelogramTest.c.i
 
 # target to preprocess a source file
 ColorCorrelogramTest.c.i:
-	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/correlogramTest.dir/build.make test/CMakeFiles/correlogramTest.dir/ColorCorrelogramTest.c.i
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/ColorCorrelogramTest.dir/build.make test/CMakeFiles/ColorCorrelogramTest.dir/ColorCorrelogramTest.c.i
 .PHONY : ColorCorrelogramTest.c.i
 
 ColorCorrelogramTest.s: ColorCorrelogramTest.c.s
@@ -130,8 +154,32 @@ ColorCorrelogramTest.s: ColorCorrelogramTest.c.s
 
 # target to generate assembly for a file
 ColorCorrelogramTest.c.s:
-	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/correlogramTest.dir/build.make test/CMakeFiles/correlogramTest.dir/ColorCorrelogramTest.c.s
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/ColorCorrelogramTest.dir/build.make test/CMakeFiles/ColorCorrelogramTest.dir/ColorCorrelogramTest.c.s
 .PHONY : ColorCorrelogramTest.c.s
+
+OpenCVHelperTest.o: OpenCVHelperTest.c.o
+.PHONY : OpenCVHelperTest.o
+
+# target to build an object file
+OpenCVHelperTest.c.o:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/OpenCVHelperTest.dir/build.make test/CMakeFiles/OpenCVHelperTest.dir/OpenCVHelperTest.c.o
+.PHONY : OpenCVHelperTest.c.o
+
+OpenCVHelperTest.i: OpenCVHelperTest.c.i
+.PHONY : OpenCVHelperTest.i
+
+# target to preprocess a source file
+OpenCVHelperTest.c.i:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/OpenCVHelperTest.dir/build.make test/CMakeFiles/OpenCVHelperTest.dir/OpenCVHelperTest.c.i
+.PHONY : OpenCVHelperTest.c.i
+
+OpenCVHelperTest.s: OpenCVHelperTest.c.s
+.PHONY : OpenCVHelperTest.s
+
+# target to generate assembly for a file
+OpenCVHelperTest.c.s:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f test/CMakeFiles/OpenCVHelperTest.dir/build.make test/CMakeFiles/OpenCVHelperTest.dir/OpenCVHelperTest.c.s
+.PHONY : OpenCVHelperTest.c.s
 
 # Help Target
 help:
@@ -139,12 +187,17 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... correlogramTest"
+	@echo "... ColorCorrelogramTest"
+	@echo "... OpenCVHelperTest"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... ColorCorrelogramTest.o"
 	@echo "... ColorCorrelogramTest.i"
 	@echo "... ColorCorrelogramTest.s"
+	@echo "... OpenCVHelperTest.o"
+	@echo "... OpenCVHelperTest.i"
+	@echo "... OpenCVHelperTest.s"
 .PHONY : help
 
 
