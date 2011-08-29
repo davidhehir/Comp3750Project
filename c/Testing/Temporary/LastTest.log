@@ -1,10 +1,10 @@
-Start testing: Aug 28 03:32 PDT
+Start testing: Aug 29 02:41 PDT
 ----------------------------------------------------------
-1/1 Testing: ColorCorrelogramTest
-1/1 Test: ColorCorrelogramTest
+1/2 Testing: ColorCorrelogramTest
+1/2 Test: ColorCorrelogramTest
 Command: "/home/david/Documents/src/comp3750/project/master/c/test/ColorCorrelogramTest"
 Directory: /home/david/Documents/src/comp3750/project/master/c/test
-"ColorCorrelogramTest" start time: Aug 28 03:32 PDT
+"ColorCorrelogramTest" start time: Aug 29 02:41 PDT
 Output:
 ----------------------------------------------------------
 error, x!=7
@@ -12,8 +12,24 @@ error, x!=7
 Test time =   0.03 sec
 ----------------------------------------------------------
 Test Failed.
-"ColorCorrelogramTest" end time: Aug 28 03:32 PDT
+"ColorCorrelogramTest" end time: Aug 29 02:41 PDT
 "ColorCorrelogramTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 28 03:32 PDT
+2/2 Testing: OpenCVHelperTest
+2/2 Test: OpenCVHelperTest
+Command: "/home/david/Documents/src/comp3750/project/master/c/test/OpenCVHelperTest"
+Directory: /home/david/Documents/src/comp3750/project/master/c/test
+"OpenCVHelperTest" start time: Aug 29 02:41 PDT
+Output:
+----------------------------------------------------------
+number of tests run: 2
+<end of output>
+Test time =   0.21 sec
+----------------------------------------------------------
+Test Passed.
+"OpenCVHelperTest" end time: Aug 29 02:41 PDT
+"OpenCVHelperTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 29 02:41 PDT

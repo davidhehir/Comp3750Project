@@ -1,3 +1,4 @@
 ColorCorrelogramTest 0 0
+OpenCVHelperTest 4 0.182381
 ---
 ColorCorrelogramTest

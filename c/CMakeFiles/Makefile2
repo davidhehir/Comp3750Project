@@ -142,8 +142,8 @@ clean: src/CMakeFiles/OpenCVHelper.dir/clean
 # Target rules for target src/CMakeFiles/main.dir
 
 # All Build rule for target.
-src/CMakeFiles/main.dir/all: src/CMakeFiles/OpenCVHelper.dir/all
 src/CMakeFiles/main.dir/all: src/CMakeFiles/ColorCorrelogram.dir/all
+src/CMakeFiles/main.dir/all: src/CMakeFiles/OpenCVHelper.dir/all
 	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
 	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles  5

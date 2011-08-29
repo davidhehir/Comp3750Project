@@ -1,3 +1,3 @@
 /* OpenCVHelper.h */
-CvMat *ConvertBGR2HSV(CvMat* input);
+IplImage *ConvertBGR2HSV(IplImage* input);
 int CompareScalar(CvScalar a, CvScalar b);

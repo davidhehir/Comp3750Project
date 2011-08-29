@@ -154,6 +154,9 @@ ColorCorrelogram_LIB_DEPENDS:STATIC=
 //Dependencies for target
 OpenCVHelper_LIB_DEPENDS:STATIC=
 
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=/usr/local/share/opencv
+
 //Value Computed by CMake
 main_BINARY_DIR:STATIC=/home/david/Documents/src/comp3750/project/master/c
 

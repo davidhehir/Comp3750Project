@@ -10,6 +10,8 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
+  "/usr/local/share/opencv/../../include/opencv"
+  "/usr/local/share/opencv/../../include"
   "src/."
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
