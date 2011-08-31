@@ -1,1 +1,1 @@
-/usr/bin/gcc     CMakeFiles/ColorCorrelogramTest.dir/ColorCorrelogramTest.c.o  -o ColorCorrelogramTest -rdynamic -L/usr/local/share/opencv/../../lib ../src/libColorCorrelogram.a -Wl,-rpath,/usr/local/share/opencv/../../lib 
+/usr/bin/gcc  -g   CMakeFiles/ColorCorrelogramTest.dir/ColorCorrelogramTest.c.o  -o ColorCorrelogramTest -rdynamic -L/usr/local/share/opencv/../../lib ../src/libColorCorrelogram.a -Wl,-rpath,/usr/local/share/opencv/../../lib 

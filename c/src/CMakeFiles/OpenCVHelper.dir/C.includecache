@@ -11,6 +11,8 @@ cv.h
 /home/david/Documents/src/comp3750/project/master/c/src/cv.h
 stdio.h
 -
+math.h
+-
 
 /usr/local/share/opencv/../../include/opencv/cv.h
 opencv2/core/core_c.h

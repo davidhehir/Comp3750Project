@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+/home/david/Documents/src/comp3750/project/master/c/src/ColorCorrelogram.h
+
 /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.h
 
 /home/david/Documents/src/comp3750/project/master/c/src/main.c
@@ -13,8 +15,12 @@ stdio.h
 -
 cv.h
 -
+highgui.h
+-
 OpenCVHelper.h
 /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.h
+ColorCorrelogram.h
+/home/david/Documents/src/comp3750/project/master/c/src/ColorCorrelogram.h
 
 /usr/local/share/opencv/../../include/opencv/cv.h
 opencv2/core/core_c.h
@@ -45,6 +51,16 @@ opencv2/core/core_c.h
 /usr/local/share/opencv/../../include/opencv/opencv2/core/core_c.h
 opencv2/core/core.hpp
 /usr/local/share/opencv/../../include/opencv/opencv2/core/core.hpp
+
+/usr/local/share/opencv/../../include/opencv/highgui.h
+opencv2/core/core_c.h
+/usr/local/share/opencv/../../include/opencv/opencv2/core/core_c.h
+opencv2/core/core.hpp
+/usr/local/share/opencv/../../include/opencv/opencv2/core/core.hpp
+opencv2/highgui/highgui_c.h
+/usr/local/share/opencv/../../include/opencv/opencv2/highgui/highgui_c.h
+opencv2/highgui/highgui.hpp
+/usr/local/share/opencv/../../include/opencv/opencv2/highgui/highgui.hpp
 
 /usr/local/share/opencv/../../include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp
@@ -413,6 +429,16 @@ cstring
 /usr/local/share/opencv/../../include/opencv2/flann/timer.h
 time.h
 -
+
+/usr/local/share/opencv/../../include/opencv2/highgui/highgui.hpp
+opencv2/core/core.hpp
+/usr/local/share/opencv/../../include/opencv2/highgui/opencv2/core/core.hpp
+opencv2/highgui/highgui_c.h
+/usr/local/share/opencv/../../include/opencv2/highgui/opencv2/highgui/highgui_c.h
+
+/usr/local/share/opencv/../../include/opencv2/highgui/highgui_c.h
+opencv2/core/core_c.h
+/usr/local/share/opencv/../../include/opencv2/highgui/opencv2/core/core_c.h
 
 /usr/local/share/opencv/../../include/opencv2/imgproc/imgproc.hpp
 opencv2/core/core.hpp

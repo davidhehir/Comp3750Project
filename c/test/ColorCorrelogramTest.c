@@ -3,11 +3,17 @@
 
 int tests_run = 0;
 
-int x = 6;
+int x = 7;
 
 static char * test_framework()
 {
   mu_assert("error, x!=7",x==7);
+  return 0;
+}
+
+static char * calculateCorrelogram()
+{
+  
   return 0;
 }
 
