@@ -11,7 +11,7 @@ that will be used throughout different program files
 IplImage* ConvertBGR2HSV(IplImage*);
 int CompareScalar(CvScalar,CvScalar);
 CvHistogram* CreateHSVHistogram(IplImage*);
-double Norm(double*);
+double Norm(double*,int);
 
 
 /* Norm:
@@ -21,20 +21,33 @@ the input vector.
 @param[in] vector: input vector
 @return L2 Distance
 */
-double Norm(double* vector)
+double Norm(double* vector,int size)
 {
     double sum=0;
     int i;
-    printf("size=%d",sizeof(vector));
-    for (i=0;i<sizeof(vector)/sizeof(double);i++)
+    for (i=0;i<size;i++)
     {
-        printf("vector %f vector^2 %f",vector[i],pow(vector[i],2.0));
         sum += vector[i] != 0 ? pow(vector[i],2.0) : 0;
     }
-    printf("sum=%11f",sum);
+
     return sqrt(sum);
 }
 
+
+/* FeatureVectorDistance:
+
+*/
+double Distance(double* vector1,double* vector2,int size)
+{
+    double sum=0;
+    int i;
+    for (i=0;i<size;i++)
+    {
+        sum += pow(vector1[i]-vector2[i],2.0);
+    }
+    return sqrt(sum);
+
+}
 /* ConvertBGR2HSV:
 A helper function that creates an new image
 containing the hsv representive of the input

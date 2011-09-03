@@ -25,6 +25,21 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../src/CMakeFiles/CompilerIdC/CMakeCCompilerId.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/CMakeFiles/CompilerIdCXX/CMakeCXXCompilerId.cpp" />
+		<Unit filename="../../src/ColorCorrelogram.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/ColorCorrelogram.h" />
+		<Unit filename="../../src/OpenCVHelper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/OpenCVHelper.h" />
+		<Unit filename="../../src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

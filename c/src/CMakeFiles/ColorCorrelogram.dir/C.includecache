@@ -9,12 +9,18 @@
 /home/david/Documents/src/comp3750/project/master/c/src/ColorCorrelogram.c
 stdio.h
 -
+stdlib.h
+-
 math.h
 -
 cv.h
 /home/david/Documents/src/comp3750/project/master/c/src/cv.h
 OpenCVHelper.h
 /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.h
+errno.h
+-
+string.h
+-
 
 /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.h
 
