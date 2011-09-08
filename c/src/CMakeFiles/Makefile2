@@ -43,6 +43,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/david/Documents/src/comp3750/project/master/c/src
 
@@ -85,13 +88,85 @@ clean: CMakeFiles/ColorCorrelogram.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/CorrelogramType.dir
+
+# All Build rule for target.
+CMakeFiles/CorrelogramType.dir/all:
+	$(MAKE) -f CMakeFiles/CorrelogramType.dir/build.make CMakeFiles/CorrelogramType.dir/depend
+	$(MAKE) -f CMakeFiles/CorrelogramType.dir/build.make CMakeFiles/CorrelogramType.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles  2
+	@echo "Built target CorrelogramType"
+.PHONY : CMakeFiles/CorrelogramType.dir/all
+
+# Include target in all.
+all: CMakeFiles/CorrelogramType.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CorrelogramType.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CorrelogramType.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles 0
+.PHONY : CMakeFiles/CorrelogramType.dir/rule
+
+# Convenience name for target.
+CorrelogramType: CMakeFiles/CorrelogramType.dir/rule
+.PHONY : CorrelogramType
+
+# clean rule for target.
+CMakeFiles/CorrelogramType.dir/clean:
+	$(MAKE) -f CMakeFiles/CorrelogramType.dir/build.make CMakeFiles/CorrelogramType.dir/clean
+.PHONY : CMakeFiles/CorrelogramType.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/CorrelogramType.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/OpenCVHelper.dir
+
+# All Build rule for target.
+CMakeFiles/OpenCVHelper.dir/all:
+	$(MAKE) -f CMakeFiles/OpenCVHelper.dir/build.make CMakeFiles/OpenCVHelper.dir/depend
+	$(MAKE) -f CMakeFiles/OpenCVHelper.dir/build.make CMakeFiles/OpenCVHelper.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles  3
+	@echo "Built target OpenCVHelper"
+.PHONY : CMakeFiles/OpenCVHelper.dir/all
+
+# Include target in all.
+all: CMakeFiles/OpenCVHelper.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/OpenCVHelper.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/OpenCVHelper.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles 0
+.PHONY : CMakeFiles/OpenCVHelper.dir/rule
+
+# Convenience name for target.
+OpenCVHelper: CMakeFiles/OpenCVHelper.dir/rule
+.PHONY : OpenCVHelper
+
+# clean rule for target.
+CMakeFiles/OpenCVHelper.dir/clean:
+	$(MAKE) -f CMakeFiles/OpenCVHelper.dir/build.make CMakeFiles/OpenCVHelper.dir/clean
+.PHONY : CMakeFiles/OpenCVHelper.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/OpenCVHelper.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
+CMakeFiles/main.dir/all: CMakeFiles/CorrelogramType.dir/all
 CMakeFiles/main.dir/all: CMakeFiles/ColorCorrelogram.dir/all
+CMakeFiles/main.dir/all: CMakeFiles/OpenCVHelper.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles  4
 	@echo "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
@@ -101,7 +176,7 @@ all: CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule

@@ -33,6 +33,11 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../src/ColorCorrelogram.h" />
+		<Unit filename="../../src/CorrelogramType" />
+		<Unit filename="../../src/CorrelogramType.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../src/CorrelogramType.h" />
 		<Unit filename="../../src/OpenCVHelper.c">
 			<Option compilerVar="CC" />
 		</Unit>

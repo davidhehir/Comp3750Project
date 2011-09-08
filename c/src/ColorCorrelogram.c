@@ -2,18 +2,12 @@
 #include <stdlib.h>
 #include <math.h>
 #include "cv.h"
+#include "highgui.h"
 #include "OpenCVHelper.h"
+#include "CorrelogramType.h"
 #include <errno.h>
 #include <string.h>
 
-typedef struct Correlogram
-{
-	IplImage* src; // brg representation of image (is this needed?)
-	IplImage* hsv; // hsv representation of image
-	const int searchDistance; // how far away from reference pixel to search
-	double* FeatureVector;
-	const int NumBins;
-} Correlogram;
 
 #define NUM_BINS 162
 
@@ -24,22 +18,25 @@ const int MAXSV=255;
 
 extern int errno;
 
-void CalculateCorrelogram(Correlogram correlogram,double *);
-void calcNumerator(Correlogram,int* );
-int calcPixelCount(Correlogram,int,int,CvScalar);
 int lambdaH(IplImage*,int,int,int, CvScalar);
 int lambdaV(IplImage*,int,int,int,CvScalar);
 IplImage* quantizeHSV(IplImage*);
 int quantizePixel(double,double,double);
 int calculateBin(double,double,double);
 
-void CalculateCorrelogram1(Correlogram* correlogram);
-int calcPixelCount1(IplImage * hsv, int searchDistance, int x,int y,CvScalar refColor);
-void calcNumerator1(IplImage* hsv,int searchDistance,int * numeratorVector);
+void CalculateCorrelogram(Correlogram* correlogram,int numBins,int searchDistance,double**);
+int calcPixelCount(IplImage * hsv, int searchDistance, int x,int y,CvScalar refColor);
+void calcNumerator(IplImage* hsv,int searchDistance,int * numeratorVector);
 
 
-
-void CalculateCorrelogram1(Correlogram* correlogram)
+/* Function CalculateCorrelogram:
+Calculates the color correlogram
+feature vector for a given input
+image. Implements Autocorrelogram
+function only.
+  @param[in] correlogram: input containing src file to calculate feature vector for.
+ */
+void CalculateCorrelogram(Correlogram* correlogram,int numBins,int searchDistance, double** maxFeatures)
 {
 	IplImage * hsv;
 	IplImage * hsvq;
@@ -49,73 +46,69 @@ void CalculateCorrelogram1(Correlogram* correlogram)
 	int i;
 	double d;
 
+    // load image and convert to a quantized hsv image
+
+    printf("Loading image %s\n",correlogram->fileName);
+    correlogram->src = cvLoadImage(correlogram->fileName,CV_LOAD_IMAGE_COLOR);
+    correlogram->FeatureVector = calloc(numBins,sizeof(double));
+    if (correlogram->src == NULL)
+    {
+        printf("Load image of %s failed",correlogram->fileName);
+        puts(strerror(errno));
+        exit(1);
+    }
+    else
+    {
+        //printf("Loaded image:%s\n",correlogram->fileName);
+    }
     hsv = ConvertBGR2HSV(correlogram->src);
     hsvq = quantizeHSV(hsv);
-    numerator = (int *) calloc(correlogram->NumBins,sizeof(int));
+    numerator = (int *) calloc(numBins,sizeof(int));
     if (numerator==NULL)
     {
         puts("CalculateCorrelogram Failed: numerator calloc");
         puts(strerror(errno));
         exit(EXIT_FAILURE);
     }
-	calcNumerator1(hsvq,correlogram->searchDistance,numerator);
+	calcNumerator(hsvq,searchDistance,numerator);
 	hist = CreateHSVHistogram(hsvq);
 
-    for (i=0; i<correlogram->NumBins; i++)
+    for (i=0; i<numBins; i++)
 	{
 		// calculate index->h,s,v values to query histogram
 		h = i/9;
 		s = (i/3)%3;
 		v = i%3;
-		d = ((double)(8*correlogram->searchDistance*cvQueryHistValue_3D(hist,h,s,v)));
+
+		d = ((double)(8*searchDistance*cvQueryHistValue_3D(hist,h,s,v)));
+		//printf("n=%f d=%f\n",(double)numerator[i],d);
 		d != 0 ? correlogram->FeatureVector[i] = ((double)numerator[i])/d : 0;
+
+		if (correlogram->FeatureVector[i] > (*maxFeatures)[i])
+            (*maxFeatures)[i] = correlogram->FeatureVector[i];
 	}
 
     // clean up heap values before returning
+
+    cvReleaseImage(&(correlogram->src));
     cvReleaseImage(&hsv);
     cvReleaseImage(&hsvq);
     cvReleaseHist(&hist);
     free(numerator);
 }
 
-/* Function CalculateCorrelogram:
-Calculates the color correlogram
-feature vector for a given input
-image. Implements Autocorrelogram
-function only.
-  src: input img
-  k: search distance
 
+
+
+/* calcNumerator:
+Calculates the numerator component of the feature vector
+by calculating the number of pixels within a distance d
+away from pixel p that have the same color as p.
+
+@param[in] correlogram: correlogram structure to calculate
+the numerator for.
  */
-void CalculateCorrelogram(Correlogram correlogram,double * featureVector)
-{
-	int * numerator = (int *) calloc(correlogram.NumBins,sizeof(int));
-	int h,s,v;
-	int i;
-	double n,d;
-	CvHistogram* hist;
-
-	// calculate numerator section
-	calcNumerator(correlogram,numerator);
-	// calculate denominator section
-	hist = CreateHSVHistogram(correlogram.hsv);
-
-	for (i=0; i<correlogram.NumBins; i++)
-	{
-		// calculate index->h,s,v values to query histogram
-		h = i/9;
-		s = (i/3)%3;
-		v = i%3;
-		d = ((double)(8*correlogram.searchDistance*cvQueryHistValue_3D(hist,h,s,v)));
-		d != 0 ? featureVector[i] = ((double)numerator[i])/d : 0;
-	}
-
-	// deallocate dynamic memory
-	cvReleaseHist(&hist);
-}
-
-
-void calcNumerator1(IplImage* hsv,int searchDistance,int * numeratorVector)
+void calcNumerator(IplImage* hsv,int searchDistance,int * numeratorVector)
 {
 	int i,j;
 	int hBin,sBin,vBin;
@@ -134,49 +127,26 @@ void calcNumerator1(IplImage* hsv,int searchDistance,int * numeratorVector)
 			// assume array is indexed by (h,s,v).
 			//Converting a 3 element index to single index by the following formula
 			index = 9*hBin+3*sBin + vBin;
-			numeratorVector[index]+=calcPixelCount1(hsv,searchDistance,j,i,refColor);
+			numeratorVector[index]+=calcPixelCount(hsv,searchDistance,j,i,refColor);
 		}
 	}
 }
 
-/* calcNumerator:
-Calculates the numerator component of the feature vector
-by calculating the number of pixels within a distance d
-away from pixel p that have the same color as p.
 
-@param[in] correlogram: correlogram structure to calculate
-the numerator for.
+
+
+/* calcPixelCount:
+Calculates the number of pixels within an square radius containing
+the same color as a given reference color
+
+@param[in] correlogram: input correlogram to calculate pixels counts from (i.e.
+contains image information, search radius etc
+@param[in] x: starting x position
+@param[in] y: starting y position
+@param[in] refColor: reference color to compare other pixels to
+@return the number of pixels within distance d with color refColor
  */
-void calcNumerator(Correlogram correlogram,int * featureVector)
-{
-	int i;
-	int j;
-	// values to calculate feature vector index;
-	int hBin,sBin,vBin;
-	// value to hold calculated index value from bin values
-	int index;
-	CvScalar refColor;
-
-
-	for (i=0; i<cvGetSize(correlogram.src).height; i++)
-	{
-		for (j=0; j<cvGetSize(correlogram.src).width; j++)
-		{
-			refColor = cvGet2D(correlogram.hsv,i,j);
-			hBin = calculateBin(refColor.val[0],MAXH/HBINS,MAXH);
-			sBin = calculateBin(refColor.val[1],MAXSV/SVBINS,MAXSV);
-			vBin = calculateBin(refColor.val[2],MAXSV/SVBINS,MAXSV);
-
-			// assume array is index by (h,s,v)
-			index = 9*hBin+3*sBin + vBin;
-			index >= 162 ? printf("index = %d\n",index):0;
-			featureVector[index]+=calcPixelCount(correlogram,j,i,refColor);
-		}
-	}
-
-}
-
-int calcPixelCount1(IplImage * hsv, int searchDistance, int x,int y,CvScalar refColor)
+int calcPixelCount(IplImage * hsv, int searchDistance, int x,int y,CvScalar refColor)
 {
 	int pixCount = 0;
 	int i;
@@ -200,38 +170,8 @@ int calcPixelCount1(IplImage * hsv, int searchDistance, int x,int y,CvScalar ref
 
 
 
-/* calcPixelCount:
-Calculates the number of pixels within an square radius containing
-the same color as a given reference color
 
-@param[in] correlogram: input correlogram to calculate pixels counts from (i.e.
-contains image information, search radius etc
-@param[in] x: starting x position
-@param[in] y: starting y position
-@param[in] refColor: reference color to compare other pixels to
-@return the number of pixels within distance d with color refColor
- */
-int calcPixelCount(Correlogram correlogram, int x,int y,CvScalar refColor)
-{
-	int pixCount = 0;
-	int i;
-	int width = cvGetSize(correlogram.src).width;
-	int height = cvGetSize(correlogram.src).height;
-	for (i = correlogram.searchDistance ; i >= 1; i--)
-	{
-		// check that the horizontal count is within image range
-		if ((y + i >= 0) && (y + i < height))
-			pixCount += lambdaH(correlogram.hsv,x-i,y+1,2*i,refColor);
-		if ((y - i >= 0) && (y - i < height))
-			pixCount += lambdaH(correlogram.hsv,x-i,y-1,2*i,refColor);
-		// check vertical count is within image range
-		if ((x - i >= 0) && (x - i < width))
-			pixCount += lambdaV(correlogram.hsv,x-i,y-i+1,2*i,refColor);
-		if ((x + i >= 0) && (x + i < width))
-			pixCount += lambdaV(correlogram.hsv,x+i,y-i+1,2*i,refColor);
-	}
-	return pixCount;
-}
+
 
 
 

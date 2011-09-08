@@ -123,6 +123,20 @@ ColorCorrelogram/fast:
 .PHONY : ColorCorrelogram/fast
 
 # Convenience name for target.
+src/CMakeFiles/CorrelogramType.dir/rule:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CorrelogramType.dir/rule
+.PHONY : src/CMakeFiles/CorrelogramType.dir/rule
+
+# Convenience name for target.
+CorrelogramType: src/CMakeFiles/CorrelogramType.dir/rule
+.PHONY : CorrelogramType
+
+# fast build rule for target.
+CorrelogramType/fast:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/build
+.PHONY : CorrelogramType/fast
+
+# Convenience name for target.
 src/CMakeFiles/OpenCVHelper.dir/rule:
 	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/OpenCVHelper.dir/rule
 .PHONY : src/CMakeFiles/OpenCVHelper.dir/rule
@@ -173,6 +187,30 @@ ColorCorrelogram.s: ColorCorrelogram.c.s
 ColorCorrelogram.c.s:
 	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/ColorCorrelogram.dir/build.make src/CMakeFiles/ColorCorrelogram.dir/ColorCorrelogram.c.s
 .PHONY : ColorCorrelogram.c.s
+
+CorrelogramType.o: CorrelogramType.c.o
+.PHONY : CorrelogramType.o
+
+# target to build an object file
+CorrelogramType.c.o:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o
+.PHONY : CorrelogramType.c.o
+
+CorrelogramType.i: CorrelogramType.c.i
+.PHONY : CorrelogramType.i
+
+# target to preprocess a source file
+CorrelogramType.c.i:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.i
+.PHONY : CorrelogramType.c.i
+
+CorrelogramType.s: CorrelogramType.c.s
+.PHONY : CorrelogramType.s
+
+# target to generate assembly for a file
+CorrelogramType.c.s:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.s
+.PHONY : CorrelogramType.c.s
 
 OpenCVHelper.o: OpenCVHelper.c.o
 .PHONY : OpenCVHelper.o
@@ -229,6 +267,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... ColorCorrelogram"
+	@echo "... CorrelogramType"
 	@echo "... OpenCVHelper"
 	@echo "... edit_cache"
 	@echo "... main"
@@ -237,6 +276,9 @@ help:
 	@echo "... ColorCorrelogram.o"
 	@echo "... ColorCorrelogram.i"
 	@echo "... ColorCorrelogram.s"
+	@echo "... CorrelogramType.o"
+	@echo "... CorrelogramType.i"
+	@echo "... CorrelogramType.s"
 	@echo "... OpenCVHelper.o"
 	@echo "... OpenCVHelper.i"
 	@echo "... OpenCVHelper.s"

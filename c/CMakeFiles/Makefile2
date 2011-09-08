@@ -57,12 +57,14 @@ CMAKE_BINARY_DIR = /home/david/Documents/src/comp3750/project/master/c
 
 # Convenience name for "all" pass in the directory.
 src/all: src/CMakeFiles/ColorCorrelogram.dir/all
+src/all: src/CMakeFiles/CorrelogramType.dir/all
 src/all: src/CMakeFiles/OpenCVHelper.dir/all
 src/all: src/CMakeFiles/main.dir/all
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
 src/clean: src/CMakeFiles/ColorCorrelogram.dir/clean
+src/clean: src/CMakeFiles/CorrelogramType.dir/clean
 src/clean: src/CMakeFiles/OpenCVHelper.dir/clean
 src/clean: src/CMakeFiles/main.dir/clean
 .PHONY : src/clean
@@ -107,13 +109,48 @@ clean: src/CMakeFiles/ColorCorrelogram.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/CorrelogramType.dir
+
+# All Build rule for target.
+src/CMakeFiles/CorrelogramType.dir/all:
+	$(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/depend
+	$(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles  3
+	@echo "Built target CorrelogramType"
+.PHONY : src/CMakeFiles/CorrelogramType.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/CorrelogramType.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CorrelogramType.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CorrelogramType.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/CMakeFiles 0
+.PHONY : src/CMakeFiles/CorrelogramType.dir/rule
+
+# Convenience name for target.
+CorrelogramType: src/CMakeFiles/CorrelogramType.dir/rule
+.PHONY : CorrelogramType
+
+# clean rule for target.
+src/CMakeFiles/CorrelogramType.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/clean
+.PHONY : src/CMakeFiles/CorrelogramType.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CorrelogramType.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/OpenCVHelper.dir
 
 # All Build rule for target.
 src/CMakeFiles/OpenCVHelper.dir/all:
 	$(MAKE) -f src/CMakeFiles/OpenCVHelper.dir/build.make src/CMakeFiles/OpenCVHelper.dir/depend
 	$(MAKE) -f src/CMakeFiles/OpenCVHelper.dir/build.make src/CMakeFiles/OpenCVHelper.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles  4
 	@echo "Built target OpenCVHelper"
 .PHONY : src/CMakeFiles/OpenCVHelper.dir/all
 
@@ -145,11 +182,12 @@ clean: src/CMakeFiles/OpenCVHelper.dir/clean
 # Target rules for target src/CMakeFiles/main.dir
 
 # All Build rule for target.
-src/CMakeFiles/main.dir/all: src/CMakeFiles/OpenCVHelper.dir/all
 src/CMakeFiles/main.dir/all: src/CMakeFiles/ColorCorrelogram.dir/all
+src/CMakeFiles/main.dir/all: src/CMakeFiles/CorrelogramType.dir/all
+src/CMakeFiles/main.dir/all: src/CMakeFiles/OpenCVHelper.dir/all
 	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
 	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles  6
 	@echo "Built target main"
 .PHONY : src/CMakeFiles/main.dir/all
 
@@ -159,7 +197,7 @@ all: src/CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/david/Documents/src/comp3750/project/master/c/CMakeFiles 0
 .PHONY : src/CMakeFiles/main.dir/rule
@@ -236,7 +274,7 @@ clean: test/CMakeFiles/ColorCorrelogramTest.dir/clean
 test/CMakeFiles/OpenCVHelperTest.dir/all: src/CMakeFiles/OpenCVHelper.dir/all
 	$(MAKE) -f test/CMakeFiles/OpenCVHelperTest.dir/build.make test/CMakeFiles/OpenCVHelperTest.dir/depend
 	$(MAKE) -f test/CMakeFiles/OpenCVHelperTest.dir/build.make test/CMakeFiles/OpenCVHelperTest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles  5
 	@echo "Built target OpenCVHelperTest"
 .PHONY : test/CMakeFiles/OpenCVHelperTest.dir/all
 

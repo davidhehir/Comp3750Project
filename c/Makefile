@@ -122,6 +122,19 @@ ColorCorrelogram/fast:
 .PHONY : ColorCorrelogram/fast
 
 #=============================================================================
+# Target rules for targets named CorrelogramType
+
+# Build rule for target.
+CorrelogramType: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CorrelogramType
+.PHONY : CorrelogramType
+
+# fast build rule for target.
+CorrelogramType/fast:
+	$(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/build
+.PHONY : CorrelogramType/fast
+
+#=============================================================================
 # Target rules for targets named OpenCVHelper
 
 # Build rule for target.
@@ -183,6 +196,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... ColorCorrelogram"
+	@echo "... CorrelogramType"
 	@echo "... OpenCVHelper"
 	@echo "... main"
 	@echo "... ColorCorrelogramTest"

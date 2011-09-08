@@ -45,6 +45,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/ColorCorrelogram.dir/DependInfo.cmake"
+  "src/CMakeFiles/CorrelogramType.dir/DependInfo.cmake"
   "src/CMakeFiles/OpenCVHelper.dir/DependInfo.cmake"
   "src/CMakeFiles/main.dir/DependInfo.cmake"
   "test/CMakeFiles/ColorCorrelogramTest.dir/DependInfo.cmake"
