@@ -10,7 +10,7 @@ typedef struct FileList
 typedef struct Correlogram
 {
     char* fileName; // unique identifier
-	IplImage* src; // brg representation of image (is this needed?)
+	//IplImage* src; // brg representation of image (is this needed?)
 	double* FeatureVector;
 
 } Correlogram;
@@ -35,5 +35,5 @@ CorrelogramArray newArray(int numElements);
 void deleteArray(CorrelogramArray ca);
 int correlogramArrayLength(CorrelogramArray ca);
 Correlogram** correlogramArrayPtr(CorrelogramArray ca);
-void addFile(FileList**,char*);
+void addFile(FileList ** list,char* file);
 #endif

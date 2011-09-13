@@ -1,3 +1,22 @@
+/**
+    @file CorrelogramType.c
+
+    This file contains several data structures used in batch calculation
+    of color correlograms. The correlogram structure has been kept to a
+    minimum for memory constrains since this is the structure that will
+    be serialized to disk for use with feature matching (i.e. use with
+    FLANN application).
+
+
+    @brief Contains data structures to calculate the color correlogram
+    of several images. Contains several helper functions to create
+    add and clean up memory for each data structure
+
+    @author David Hehir
+
+    @version 0.1
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "cv.h"
@@ -11,7 +30,7 @@ typedef struct FileList
 typedef struct Correlogram
 {
     char* fileName; // unique identifier
-	IplImage* src; // brg representation of image (is this needed?)
+	//IplImage* src; // brg representation of image (is this needed?)
 	double* FeatureVector;
 
 } Correlogram;

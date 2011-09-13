@@ -1,3 +1,21 @@
+/**
+    @file ColorCorrelogram.c
+    Contains an implementation of calculating a color correlogram.
+    This implementation uses IplImages for image representation
+    but can be easily modified to use cvMat
+
+    @brief Contains functions to calculate the color correlogram
+    of the image. Sections are currently hard coded to fit the
+    162 bin quantization, and using different method would require
+    some changes (should be fairly minimal)
+
+    @author David Hehir
+
+    @version 0.1
+
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -29,15 +47,19 @@ int calcPixelCount(IplImage * hsv, int searchDistance, int x,int y,CvScalar refC
 void calcNumerator(IplImage* hsv,int searchDistance,int * numeratorVector);
 
 
-/* Function CalculateCorrelogram:
+/** Function CalculateCorrelogram:
 Calculates the color correlogram
 feature vector for a given input
 image. Implements Autocorrelogram
 function only.
-  @param[in] correlogram: input containing src file to calculate feature vector for.
+    @param[in] correlogram: input containing src file name to calculate feature vector for.
+    @param[in] numBins: The number of quantization bin to quantize the src image into
+    @param[in] searchDistance: constant value for the correlogram algorithm. Sets the pixel count value
+    @param[inout] maxFeatures: array containing the max feature vector elements found so far. Used for thresholding at a later stage.
  */
 void CalculateCorrelogram(Correlogram* correlogram,int numBins,int searchDistance, double** maxFeatures)
 {
+    IplImage * src;
 	IplImage * hsv;
 	IplImage * hsvq;
 	int * numerator;
@@ -48,20 +70,16 @@ void CalculateCorrelogram(Correlogram* correlogram,int numBins,int searchDistanc
 
     // load image and convert to a quantized hsv image
 
-    printf("Loading image %s\n",correlogram->fileName);
-    correlogram->src = cvLoadImage(correlogram->fileName,CV_LOAD_IMAGE_COLOR);
+    src = cvLoadImage(correlogram->fileName,CV_LOAD_IMAGE_COLOR);
     correlogram->FeatureVector = calloc(numBins,sizeof(double));
-    if (correlogram->src == NULL)
+    if (src == NULL)
     {
         printf("Load image of %s failed",correlogram->fileName);
         puts(strerror(errno));
         exit(1);
     }
-    else
-    {
-        //printf("Loaded image:%s\n",correlogram->fileName);
-    }
-    hsv = ConvertBGR2HSV(correlogram->src);
+
+    hsv = ConvertBGR2HSV(src);
     hsvq = quantizeHSV(hsv);
     numerator = (int *) calloc(numBins,sizeof(int));
     if (numerator==NULL)
@@ -89,8 +107,7 @@ void CalculateCorrelogram(Correlogram* correlogram,int numBins,int searchDistanc
 	}
 
     // clean up heap values before returning
-
-    cvReleaseImage(&(correlogram->src));
+    cvReleaseImage(&src);
     cvReleaseImage(&hsv);
     cvReleaseImage(&hsvq);
     cvReleaseHist(&hist);
@@ -266,6 +283,11 @@ IplImage* quantizeHSV(IplImage* image)
 	return qhsv;
 }
 
+/* quantizePixel:
+quantizes a single channel given the pixel value, the interval and
+the maximum pixel value for the channel.
+
+*/
 int quantizePixel(double pixelValue,double interval,double maxValue)
 {
 	int newPixelValue;

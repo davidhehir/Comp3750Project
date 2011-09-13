@@ -127,5 +127,9 @@ CvHistogram* CreateHSVHistogram(IplImage* image)
   histogram = cvCreateHist(3,bins,CV_HIST_ARRAY,ranges,1);
   cvCalcHist(planes,histogram,0,0);
 
+  cvReleaseImage(&h);
+  cvReleaseImage(&s);
+  cvReleaseImage(&v);
+
   return histogram;
 }

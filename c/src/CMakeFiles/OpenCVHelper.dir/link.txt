@@ -1,2 +1,2 @@
-/usr/bin/ar cr libOpenCVHelper.a  CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o
+/usr/bin/ar cr libOpenCVHelper.a  CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o
 /usr/bin/ranlib libOpenCVHelper.a

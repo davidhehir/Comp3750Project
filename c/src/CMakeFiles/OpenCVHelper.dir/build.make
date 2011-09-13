@@ -35,70 +35,70 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/david/Documents/src/comp3750/project/master/c
+CMAKE_SOURCE_DIR = /home/david/Documents/src/comp3750/project/master/c/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/david/Documents/src/comp3750/project/master/c
+CMAKE_BINARY_DIR = /home/david/Documents/src/comp3750/project/master/c/src
 
 # Include any dependencies generated for this target.
-include src/CMakeFiles/OpenCVHelper.dir/depend.make
+include CMakeFiles/OpenCVHelper.dir/depend.make
 
 # Include the progress variables for this target.
-include src/CMakeFiles/OpenCVHelper.dir/progress.make
+include CMakeFiles/OpenCVHelper.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include src/CMakeFiles/OpenCVHelper.dir/flags.make
+include CMakeFiles/OpenCVHelper.dir/flags.make
 
-src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o: src/CMakeFiles/OpenCVHelper.dir/flags.make
-src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o: src/OpenCVHelper.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o   -c /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.c
+CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o: CMakeFiles/OpenCVHelper.dir/flags.make
+CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o: OpenCVHelper.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o   -c /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.c
 
-src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.i"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.c > CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.i
+CMakeFiles/OpenCVHelper.dir/OpenCVHelper.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/OpenCVHelper.dir/OpenCVHelper.i"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.c > CMakeFiles/OpenCVHelper.dir/OpenCVHelper.i
 
-src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.s"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.c -o CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.s
+CMakeFiles/OpenCVHelper.dir/OpenCVHelper.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/OpenCVHelper.dir/OpenCVHelper.s"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/david/Documents/src/comp3750/project/master/c/src/OpenCVHelper.c -o CMakeFiles/OpenCVHelper.dir/OpenCVHelper.s
 
-src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.requires:
-.PHONY : src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.requires
+CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.requires:
+.PHONY : CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.requires
 
-src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.provides: src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.requires
-	$(MAKE) -f src/CMakeFiles/OpenCVHelper.dir/build.make src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.provides.build
-.PHONY : src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.provides
+CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.provides: CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.requires
+	$(MAKE) -f CMakeFiles/OpenCVHelper.dir/build.make CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.provides.build
+.PHONY : CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.provides
 
-src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.provides.build: src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o
-.PHONY : src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.provides.build
+CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.provides.build: CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o
+.PHONY : CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.provides.build
 
 # Object files for target OpenCVHelper
 OpenCVHelper_OBJECTS = \
-"CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o"
+"CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o"
 
 # External object files for target OpenCVHelper
 OpenCVHelper_EXTERNAL_OBJECTS =
 
-src/libOpenCVHelper.a: src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o
-src/libOpenCVHelper.a: src/CMakeFiles/OpenCVHelper.dir/build.make
-src/libOpenCVHelper.a: src/CMakeFiles/OpenCVHelper.dir/link.txt
+libOpenCVHelper.a: CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o
+libOpenCVHelper.a: CMakeFiles/OpenCVHelper.dir/build.make
+libOpenCVHelper.a: CMakeFiles/OpenCVHelper.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C static library libOpenCVHelper.a"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -P CMakeFiles/OpenCVHelper.dir/cmake_clean_target.cmake
-	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OpenCVHelper.dir/link.txt --verbose=$(VERBOSE)
+	$(CMAKE_COMMAND) -P CMakeFiles/OpenCVHelper.dir/cmake_clean_target.cmake
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OpenCVHelper.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/OpenCVHelper.dir/build: src/libOpenCVHelper.a
-.PHONY : src/CMakeFiles/OpenCVHelper.dir/build
+CMakeFiles/OpenCVHelper.dir/build: libOpenCVHelper.a
+.PHONY : CMakeFiles/OpenCVHelper.dir/build
 
-src/CMakeFiles/OpenCVHelper.dir/requires: src/CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o.requires
-.PHONY : src/CMakeFiles/OpenCVHelper.dir/requires
+CMakeFiles/OpenCVHelper.dir/requires: CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o.requires
+.PHONY : CMakeFiles/OpenCVHelper.dir/requires
 
-src/CMakeFiles/OpenCVHelper.dir/clean:
-	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -P CMakeFiles/OpenCVHelper.dir/cmake_clean.cmake
-.PHONY : src/CMakeFiles/OpenCVHelper.dir/clean
+CMakeFiles/OpenCVHelper.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/OpenCVHelper.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/OpenCVHelper.dir/clean
 
-src/CMakeFiles/OpenCVHelper.dir/depend:
-	cd /home/david/Documents/src/comp3750/project/master/c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/Documents/src/comp3750/project/master/c /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/OpenCVHelper.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : src/CMakeFiles/OpenCVHelper.dir/depend
+CMakeFiles/OpenCVHelper.dir/depend:
+	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/OpenCVHelper.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/OpenCVHelper.dir/depend
 

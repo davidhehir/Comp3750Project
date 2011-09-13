@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/ColorCorrelogram.dir/ColorCorrelogram.c.o"
+  "CMakeFiles/ColorCorrelogram.dir/ColorCorrelogram.o"
   "libColorCorrelogram.pdb"
   "libColorCorrelogram.a"
 )

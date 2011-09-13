@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o"
+  "CMakeFiles/CorrelogramType.dir/CorrelogramType.o"
   "libCorrelogramType.pdb"
   "libCorrelogramType.a"
 )

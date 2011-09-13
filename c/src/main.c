@@ -5,6 +5,7 @@
 #include "OpenCVHelper.h"
 #include "CorrelogramType.h"
 #include "ColorCorrelogram.h"
+#include "IOHelper.h"
 #include <time.h>
 #include <dirent.h>
 
@@ -21,7 +22,24 @@ int main(int argc, char *argv[])
     CorrelogramCollection collection;
     int NumBins = 162;
     char* dir = argv[1];
+    char * outputFolder = argv[2];
     char tmpFile[255] ="";
+    time_t t0,t1;
+    clock_t c0,c1;
+    t0 = time(NULL);
+    c0 = clock();
+
+  printf ("\tbegin (wall):            %ld\n", (long) t0);
+  printf ("\tbegin (CPU):             %d\n", (int) c0);
+
+    if (!isDir(outputFolder))
+    {
+        printf("Failure:Output folder %s does not exist\n",outputFolder);
+        exit(1);
+    }
+    FindImagesInFolders(argv[1],&files,&list);
+
+    /*
     if (pDIR=opendir(dir))
     {
         while (entry = readdir(pDIR))
@@ -42,7 +60,7 @@ int main(int argc, char *argv[])
             }
         }
 
-    }
+    } */
 
     //correlograms = (newArray(files));
     correlograms = (CorrelogramArray *) malloc(sizeof(CorrelogramArray));
@@ -57,7 +75,6 @@ int main(int argc, char *argv[])
     {
         tmp = (Correlogram *) malloc(sizeof(Correlogram));
         tmp->fileName = (char *) malloc((strlen(i->fileName)+1) );
-        printf("length %d\n",strlen(i->fileName));
         if (tmp==NULL)
         {
             printf("Malloc failed at index %d: tmp",index);
@@ -66,11 +83,12 @@ int main(int argc, char *argv[])
         strcpy(tmp->fileName,i->fileName);
         //tmp->fileName = list->fileName;
         correlograms->array[index] = tmp;
-        printf("file name=%s",correlograms->array[index]->fileName);
+        //printf("\n\nfile name = %s\n\n",tmp->fileName);
+          //printf("file name=%s",correlograms->array[index]->fileName);
         i = i->next;
         index++;
     }
-    //deleteList(&list);
+    deleteList(&list);
 
     collection.correlograms = correlograms;
     collection.NumBins = NumBins;
@@ -82,12 +100,19 @@ int main(int argc, char *argv[])
 
     printf("number of read files = %d\n",files);
     int j;
+    //char * outputFolder = "json/";
+    char fileName[255] ="";
+    char stringIndex[10]="";
     for (index = 0;index <collection.correlograms->elements;index++)
     {
 
             CalculateCorrelogram(collection.correlograms->array[index],collection.NumBins,collection.searchDistance,&(collection.MaxFeatureVector));
-
-        printf("Norm for %s = %f\n",collection.correlograms->array[index]->fileName,Norm(collection.correlograms->array[index]->FeatureVector,collection.NumBins));
+            strcpy(fileName,outputFolder);
+            sprintf(stringIndex, "%d", index);
+            strcat(fileName,stringIndex);
+            strcat(fileName,".json");
+            CreateJSONCorrelogram(collection.correlograms->array[index], collection.NumBins,fileName);
+      //  printf("Norm for %s = %f\n",collection.correlograms->array[index]->fileName,Norm(collection.correlograms->array[index]->FeatureVector,collection.NumBins));
 
            /* for (j = 0;j<162;j++)
             {
@@ -95,10 +120,25 @@ int main(int argc, char *argv[])
             }*/
     }
 
+    strcpy(fileName,outputFolder);
+    strcat(fileName,"MaxFeatureVector.json");
+    CreateJSONMaxFeatureVector(collection.MaxFeatureVector,collection.NumBins,fileName);
+
+    free(collection.correlograms->array);
+    free(collection.MaxFeatureVector);
+    free(collection.correlograms);
+  t1 = time(NULL);
+  c1 = clock();
+
+  printf ("\tend (wall):              %ld\n", (long) t1);
+  printf ("\tend (CPU);               %d\n", (int) c1);
+  printf ("\telapsed wall clock time: %ld\n", (long) (t1 - t0));
+  printf ("\telapsed CPU time:        %f\n", (float) (c1 - c0)/CLOCKS_PER_SEC);
+
+
     //free(tmp);
     //deleteList(&list);
-    free(entry);
-    closedir(pDIR);
+
 
 /*	IplImage* image=0;
 	//IplImage* image2 = cvLoadImage();

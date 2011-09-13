@@ -137,6 +137,20 @@ CorrelogramType/fast:
 .PHONY : CorrelogramType/fast
 
 # Convenience name for target.
+src/CMakeFiles/IOHelper.dir/rule:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/IOHelper.dir/rule
+.PHONY : src/CMakeFiles/IOHelper.dir/rule
+
+# Convenience name for target.
+IOHelper: src/CMakeFiles/IOHelper.dir/rule
+.PHONY : IOHelper
+
+# fast build rule for target.
+IOHelper/fast:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/IOHelper.dir/build.make src/CMakeFiles/IOHelper.dir/build
+.PHONY : IOHelper/fast
+
+# Convenience name for target.
 src/CMakeFiles/OpenCVHelper.dir/rule:
 	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/OpenCVHelper.dir/rule
 .PHONY : src/CMakeFiles/OpenCVHelper.dir/rule
@@ -212,6 +226,30 @@ CorrelogramType.c.s:
 	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.s
 .PHONY : CorrelogramType.c.s
 
+IOHelper.o: IOHelper.c.o
+.PHONY : IOHelper.o
+
+# target to build an object file
+IOHelper.c.o:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/IOHelper.dir/build.make src/CMakeFiles/IOHelper.dir/IOHelper.c.o
+.PHONY : IOHelper.c.o
+
+IOHelper.i: IOHelper.c.i
+.PHONY : IOHelper.i
+
+# target to preprocess a source file
+IOHelper.c.i:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/IOHelper.dir/build.make src/CMakeFiles/IOHelper.dir/IOHelper.c.i
+.PHONY : IOHelper.c.i
+
+IOHelper.s: IOHelper.c.s
+.PHONY : IOHelper.s
+
+# target to generate assembly for a file
+IOHelper.c.s:
+	cd /home/david/Documents/src/comp3750/project/master/c && $(MAKE) -f src/CMakeFiles/IOHelper.dir/build.make src/CMakeFiles/IOHelper.dir/IOHelper.c.s
+.PHONY : IOHelper.c.s
+
 OpenCVHelper.o: OpenCVHelper.c.o
 .PHONY : OpenCVHelper.o
 
@@ -268,6 +306,7 @@ help:
 	@echo "... depend"
 	@echo "... ColorCorrelogram"
 	@echo "... CorrelogramType"
+	@echo "... IOHelper"
 	@echo "... OpenCVHelper"
 	@echo "... edit_cache"
 	@echo "... main"
@@ -279,6 +318,9 @@ help:
 	@echo "... CorrelogramType.o"
 	@echo "... CorrelogramType.i"
 	@echo "... CorrelogramType.s"
+	@echo "... IOHelper.o"
+	@echo "... IOHelper.i"
+	@echo "... IOHelper.s"
 	@echo "... OpenCVHelper.o"
 	@echo "... OpenCVHelper.i"
 	@echo "... OpenCVHelper.s"

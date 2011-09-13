@@ -19,7 +19,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -148,17 +148,23 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Dependencies for target
-ColorCorrelogram_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+ColorCorrelogram_LIB_DEPENDS:STATIC=debug;opencv_core;optimized;opencv_core;debug;opencv_imgproc;optimized;opencv_imgproc;debug;opencv_features2d;optimized;opencv_features2d;debug;opencv_gpu;optimized;opencv_gpu;debug;opencv_calib3d;optimized;opencv_calib3d;debug;opencv_objdetect;optimized;opencv_objdetect;debug;opencv_video;optimized;opencv_video;debug;opencv_highgui;optimized;opencv_highgui;debug;opencv_ml;optimized;opencv_ml;debug;opencv_legacy;optimized;opencv_legacy;debug;opencv_contrib;optimized;opencv_contrib;debug;opencv_flann;optimized;opencv_flann;
 
-//Dependencies for target
-CorrelogramType_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+CorrelogramType_LIB_DEPENDS:STATIC=debug;opencv_core;optimized;opencv_core;debug;opencv_imgproc;optimized;opencv_imgproc;debug;opencv_features2d;optimized;opencv_features2d;debug;opencv_gpu;optimized;opencv_gpu;debug;opencv_calib3d;optimized;opencv_calib3d;debug;opencv_objdetect;optimized;opencv_objdetect;debug;opencv_video;optimized;opencv_video;debug;opencv_highgui;optimized;opencv_highgui;debug;opencv_ml;optimized;opencv_ml;debug;opencv_legacy;optimized;opencv_legacy;debug;opencv_contrib;optimized;opencv_contrib;debug;opencv_flann;optimized;opencv_flann;
 
-//Dependencies for target
-OpenCVHelper_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+IOHelper_LIB_DEPENDS:STATIC=general;CorrelogramType;
+
+//Dependencies for the target
+OpenCVHelper_LIB_DEPENDS:STATIC=debug;opencv_core;optimized;opencv_core;debug;opencv_imgproc;optimized;opencv_imgproc;debug;opencv_features2d;optimized;opencv_features2d;debug;opencv_gpu;optimized;opencv_gpu;debug;opencv_calib3d;optimized;opencv_calib3d;debug;opencv_objdetect;optimized;opencv_objdetect;debug;opencv_video;optimized;opencv_video;debug;opencv_highgui;optimized;opencv_highgui;debug;opencv_ml;optimized;opencv_ml;debug;opencv_legacy;optimized;opencv_legacy;debug;opencv_contrib;optimized;opencv_contrib;debug;opencv_flann;optimized;opencv_flann;
 
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/local/share/opencv
+
+//The directory containing a CMake configuration file for jansson.
+jansson_DIR:PATH=jansson_DIR-NOTFOUND
 
 //Value Computed by CMake
 main_BINARY_DIR:STATIC=/home/david/Documents/src/comp3750/project/master/c

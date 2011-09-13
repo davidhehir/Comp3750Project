@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/OpenCVHelper.dir/OpenCVHelper.c.o"
+  "CMakeFiles/OpenCVHelper.dir/OpenCVHelper.o"
   "libOpenCVHelper.pdb"
   "libOpenCVHelper.a"
 )

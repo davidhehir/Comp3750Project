@@ -41,6 +41,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ColorCorrelogram.dir/DependInfo.cmake"
   "CMakeFiles/CorrelogramType.dir/DependInfo.cmake"
+  "CMakeFiles/IOHelper.dir/DependInfo.cmake"
   "CMakeFiles/OpenCVHelper.dir/DependInfo.cmake"
   "CMakeFiles/main.dir/DependInfo.cmake"
   )

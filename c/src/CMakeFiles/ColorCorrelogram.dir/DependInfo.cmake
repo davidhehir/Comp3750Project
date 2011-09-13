@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_C
-  "/home/david/Documents/src/comp3750/project/master/c/src/ColorCorrelogram.c" "/home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/ColorCorrelogram.dir/ColorCorrelogram.c.o"
+  "/home/david/Documents/src/comp3750/project/master/c/src/ColorCorrelogram.c" "/home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/ColorCorrelogram.dir/ColorCorrelogram.o"
   )
 SET(CMAKE_C_COMPILER_ID "GNU")
 

@@ -135,6 +135,19 @@ CorrelogramType/fast:
 .PHONY : CorrelogramType/fast
 
 #=============================================================================
+# Target rules for targets named IOHelper
+
+# Build rule for target.
+IOHelper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 IOHelper
+.PHONY : IOHelper
+
+# fast build rule for target.
+IOHelper/fast:
+	$(MAKE) -f src/CMakeFiles/IOHelper.dir/build.make src/CMakeFiles/IOHelper.dir/build
+.PHONY : IOHelper/fast
+
+#=============================================================================
 # Target rules for targets named OpenCVHelper
 
 # Build rule for target.
@@ -197,6 +210,7 @@ help:
 	@echo "... test"
 	@echo "... ColorCorrelogram"
 	@echo "... CorrelogramType"
+	@echo "... IOHelper"
 	@echo "... OpenCVHelper"
 	@echo "... main"
 	@echo "... ColorCorrelogramTest"

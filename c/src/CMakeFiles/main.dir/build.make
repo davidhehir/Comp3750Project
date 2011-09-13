@@ -35,72 +35,74 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/david/Documents/src/comp3750/project/master/c
+CMAKE_SOURCE_DIR = /home/david/Documents/src/comp3750/project/master/c/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/david/Documents/src/comp3750/project/master/c
+CMAKE_BINARY_DIR = /home/david/Documents/src/comp3750/project/master/c/src
 
 # Include any dependencies generated for this target.
-include src/CMakeFiles/main.dir/depend.make
+include CMakeFiles/main.dir/depend.make
 
 # Include the progress variables for this target.
-include src/CMakeFiles/main.dir/progress.make
+include CMakeFiles/main.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include src/CMakeFiles/main.dir/flags.make
+include CMakeFiles/main.dir/flags.make
 
-src/CMakeFiles/main.dir/main.c.o: src/CMakeFiles/main.dir/flags.make
-src/CMakeFiles/main.dir/main.c.o: src/main.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/main.dir/main.c.o"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/main.dir/main.c.o   -c /home/david/Documents/src/comp3750/project/master/c/src/main.c
+CMakeFiles/main.dir/main.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/main.o: main.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/main.dir/main.o"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/main.dir/main.o   -c /home/david/Documents/src/comp3750/project/master/c/src/main.c
 
-src/CMakeFiles/main.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/main.c.i"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/david/Documents/src/comp3750/project/master/c/src/main.c > CMakeFiles/main.dir/main.c.i
+CMakeFiles/main.dir/main.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/main.i"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/david/Documents/src/comp3750/project/master/c/src/main.c > CMakeFiles/main.dir/main.i
 
-src/CMakeFiles/main.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/main.c.s"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/david/Documents/src/comp3750/project/master/c/src/main.c -o CMakeFiles/main.dir/main.c.s
+CMakeFiles/main.dir/main.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/main.s"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/david/Documents/src/comp3750/project/master/c/src/main.c -o CMakeFiles/main.dir/main.s
 
-src/CMakeFiles/main.dir/main.c.o.requires:
-.PHONY : src/CMakeFiles/main.dir/main.c.o.requires
+CMakeFiles/main.dir/main.o.requires:
+.PHONY : CMakeFiles/main.dir/main.o.requires
 
-src/CMakeFiles/main.dir/main.c.o.provides: src/CMakeFiles/main.dir/main.c.o.requires
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.o.provides.build
-.PHONY : src/CMakeFiles/main.dir/main.c.o.provides
+CMakeFiles/main.dir/main.o.provides: CMakeFiles/main.dir/main.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.o.provides.build
+.PHONY : CMakeFiles/main.dir/main.o.provides
 
-src/CMakeFiles/main.dir/main.c.o.provides.build: src/CMakeFiles/main.dir/main.c.o
-.PHONY : src/CMakeFiles/main.dir/main.c.o.provides.build
+CMakeFiles/main.dir/main.o.provides.build: CMakeFiles/main.dir/main.o
+.PHONY : CMakeFiles/main.dir/main.o.provides.build
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/main.c.o"
+"CMakeFiles/main.dir/main.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-src/main: src/CMakeFiles/main.dir/main.c.o
-src/main: src/libCorrelogramType.a
-src/main: src/libColorCorrelogram.a
-src/main: src/libOpenCVHelper.a
-src/main: src/CMakeFiles/main.dir/build.make
-src/main: src/CMakeFiles/main.dir/link.txt
+main: CMakeFiles/main.dir/main.o
+main: libCorrelogramType.a
+main: libColorCorrelogram.a
+main: libOpenCVHelper.a
+main: libIOHelper.a
+main: libCorrelogramType.a
+main: CMakeFiles/main.dir/build.make
+main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable main"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/main.dir/build: src/main
-.PHONY : src/CMakeFiles/main.dir/build
+CMakeFiles/main.dir/build: main
+.PHONY : CMakeFiles/main.dir/build
 
-src/CMakeFiles/main.dir/requires: src/CMakeFiles/main.dir/main.c.o.requires
-.PHONY : src/CMakeFiles/main.dir/requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/main.o.requires
+.PHONY : CMakeFiles/main.dir/requires
 
-src/CMakeFiles/main.dir/clean:
-	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -P CMakeFiles/main.dir/cmake_clean.cmake
-.PHONY : src/CMakeFiles/main.dir/clean
+CMakeFiles/main.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/main.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/main.dir/clean
 
-src/CMakeFiles/main.dir/depend:
-	cd /home/david/Documents/src/comp3750/project/master/c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/Documents/src/comp3750/project/master/c /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : src/CMakeFiles/main.dir/depend
+CMakeFiles/main.dir/depend:
+	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/main.dir/depend
 

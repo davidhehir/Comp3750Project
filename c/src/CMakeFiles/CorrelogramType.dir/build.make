@@ -35,70 +35,70 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/david/Documents/src/comp3750/project/master/c
+CMAKE_SOURCE_DIR = /home/david/Documents/src/comp3750/project/master/c/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/david/Documents/src/comp3750/project/master/c
+CMAKE_BINARY_DIR = /home/david/Documents/src/comp3750/project/master/c/src
 
 # Include any dependencies generated for this target.
-include src/CMakeFiles/CorrelogramType.dir/depend.make
+include CMakeFiles/CorrelogramType.dir/depend.make
 
 # Include the progress variables for this target.
-include src/CMakeFiles/CorrelogramType.dir/progress.make
+include CMakeFiles/CorrelogramType.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include src/CMakeFiles/CorrelogramType.dir/flags.make
+include CMakeFiles/CorrelogramType.dir/flags.make
 
-src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o: src/CMakeFiles/CorrelogramType.dir/flags.make
-src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o: src/CorrelogramType.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o   -c /home/david/Documents/src/comp3750/project/master/c/src/CorrelogramType.c
+CMakeFiles/CorrelogramType.dir/CorrelogramType.o: CMakeFiles/CorrelogramType.dir/flags.make
+CMakeFiles/CorrelogramType.dir/CorrelogramType.o: CorrelogramType.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/CorrelogramType.dir/CorrelogramType.o"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/CorrelogramType.dir/CorrelogramType.o   -c /home/david/Documents/src/comp3750/project/master/c/src/CorrelogramType.c
 
-src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CorrelogramType.dir/CorrelogramType.c.i"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/david/Documents/src/comp3750/project/master/c/src/CorrelogramType.c > CMakeFiles/CorrelogramType.dir/CorrelogramType.c.i
+CMakeFiles/CorrelogramType.dir/CorrelogramType.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/CorrelogramType.dir/CorrelogramType.i"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /home/david/Documents/src/comp3750/project/master/c/src/CorrelogramType.c > CMakeFiles/CorrelogramType.dir/CorrelogramType.i
 
-src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CorrelogramType.dir/CorrelogramType.c.s"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/david/Documents/src/comp3750/project/master/c/src/CorrelogramType.c -o CMakeFiles/CorrelogramType.dir/CorrelogramType.c.s
+CMakeFiles/CorrelogramType.dir/CorrelogramType.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/CorrelogramType.dir/CorrelogramType.s"
+	/usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /home/david/Documents/src/comp3750/project/master/c/src/CorrelogramType.c -o CMakeFiles/CorrelogramType.dir/CorrelogramType.s
 
-src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.requires:
-.PHONY : src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.requires
+CMakeFiles/CorrelogramType.dir/CorrelogramType.o.requires:
+.PHONY : CMakeFiles/CorrelogramType.dir/CorrelogramType.o.requires
 
-src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.provides: src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.requires
-	$(MAKE) -f src/CMakeFiles/CorrelogramType.dir/build.make src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.provides.build
-.PHONY : src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.provides
+CMakeFiles/CorrelogramType.dir/CorrelogramType.o.provides: CMakeFiles/CorrelogramType.dir/CorrelogramType.o.requires
+	$(MAKE) -f CMakeFiles/CorrelogramType.dir/build.make CMakeFiles/CorrelogramType.dir/CorrelogramType.o.provides.build
+.PHONY : CMakeFiles/CorrelogramType.dir/CorrelogramType.o.provides
 
-src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.provides.build: src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o
-.PHONY : src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.provides.build
+CMakeFiles/CorrelogramType.dir/CorrelogramType.o.provides.build: CMakeFiles/CorrelogramType.dir/CorrelogramType.o
+.PHONY : CMakeFiles/CorrelogramType.dir/CorrelogramType.o.provides.build
 
 # Object files for target CorrelogramType
 CorrelogramType_OBJECTS = \
-"CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o"
+"CMakeFiles/CorrelogramType.dir/CorrelogramType.o"
 
 # External object files for target CorrelogramType
 CorrelogramType_EXTERNAL_OBJECTS =
 
-src/libCorrelogramType.a: src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o
-src/libCorrelogramType.a: src/CMakeFiles/CorrelogramType.dir/build.make
-src/libCorrelogramType.a: src/CMakeFiles/CorrelogramType.dir/link.txt
+libCorrelogramType.a: CMakeFiles/CorrelogramType.dir/CorrelogramType.o
+libCorrelogramType.a: CMakeFiles/CorrelogramType.dir/build.make
+libCorrelogramType.a: CMakeFiles/CorrelogramType.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C static library libCorrelogramType.a"
-	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -P CMakeFiles/CorrelogramType.dir/cmake_clean_target.cmake
-	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CorrelogramType.dir/link.txt --verbose=$(VERBOSE)
+	$(CMAKE_COMMAND) -P CMakeFiles/CorrelogramType.dir/cmake_clean_target.cmake
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CorrelogramType.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/CMakeFiles/CorrelogramType.dir/build: src/libCorrelogramType.a
-.PHONY : src/CMakeFiles/CorrelogramType.dir/build
+CMakeFiles/CorrelogramType.dir/build: libCorrelogramType.a
+.PHONY : CMakeFiles/CorrelogramType.dir/build
 
-src/CMakeFiles/CorrelogramType.dir/requires: src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o.requires
-.PHONY : src/CMakeFiles/CorrelogramType.dir/requires
+CMakeFiles/CorrelogramType.dir/requires: CMakeFiles/CorrelogramType.dir/CorrelogramType.o.requires
+.PHONY : CMakeFiles/CorrelogramType.dir/requires
 
-src/CMakeFiles/CorrelogramType.dir/clean:
-	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -P CMakeFiles/CorrelogramType.dir/cmake_clean.cmake
-.PHONY : src/CMakeFiles/CorrelogramType.dir/clean
+CMakeFiles/CorrelogramType.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/CorrelogramType.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/CorrelogramType.dir/clean
 
-src/CMakeFiles/CorrelogramType.dir/depend:
-	cd /home/david/Documents/src/comp3750/project/master/c && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/Documents/src/comp3750/project/master/c /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/CorrelogramType.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : src/CMakeFiles/CorrelogramType.dir/depend
+CMakeFiles/CorrelogramType.dir/depend:
+	cd /home/david/Documents/src/comp3750/project/master/c/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src /home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/CorrelogramType.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/CorrelogramType.dir/depend
 

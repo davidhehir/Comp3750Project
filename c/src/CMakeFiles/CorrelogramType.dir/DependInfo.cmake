@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_C
-  "/home/david/Documents/src/comp3750/project/master/c/src/CorrelogramType.c" "/home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o"
+  "/home/david/Documents/src/comp3750/project/master/c/src/CorrelogramType.c" "/home/david/Documents/src/comp3750/project/master/c/src/CMakeFiles/CorrelogramType.dir/CorrelogramType.o"
   )
 SET(CMAKE_C_COMPILER_ID "GNU")
 

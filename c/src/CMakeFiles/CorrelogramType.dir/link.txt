@@ -1,2 +1,2 @@
-/usr/bin/ar cr libCorrelogramType.a  CMakeFiles/CorrelogramType.dir/CorrelogramType.c.o
+/usr/bin/ar cr libCorrelogramType.a  CMakeFiles/CorrelogramType.dir/CorrelogramType.o
 /usr/bin/ranlib libCorrelogramType.a

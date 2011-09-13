@@ -1,2 +1,2 @@
-/usr/bin/ar cr libColorCorrelogram.a  CMakeFiles/ColorCorrelogram.dir/ColorCorrelogram.c.o
+/usr/bin/ar cr libColorCorrelogram.a  CMakeFiles/ColorCorrelogram.dir/ColorCorrelogram.o
 /usr/bin/ranlib libColorCorrelogram.a
