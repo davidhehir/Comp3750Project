@@ -1,2 +1,0 @@
-/usr/bin/ar cr libIOHelper.a  CMakeFiles/IOHelper.dir/IOHelper.o
-/usr/bin/ranlib libIOHelper.a
