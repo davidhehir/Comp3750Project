@@ -1,0 +1,2 @@
+/usr/bin/ar cr libFeatureVector.a  CMakeFiles/FeatureVector.dir/FeatureVector.cxx.o
+/usr/bin/ranlib libFeatureVector.a
