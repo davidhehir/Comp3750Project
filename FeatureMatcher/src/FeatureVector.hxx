@@ -20,6 +20,7 @@
 struct FeatureVector
 {
     char FileName[255];
+    float L2Norm;
     //cv::Mat * FeatureVector;
     int vectorIndex;
 };

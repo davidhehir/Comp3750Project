@@ -1,19 +1,11 @@
 #include <stdlib.h>
 #include "FeatureVector.hxx"
+#include <math.h>
 
 //using namespace cv;
 using namespace std;
 using namespace cv;
 
-/*
-FeatureVector::FeatureVector(string file,const double* maxFeatureVector)
-{
-    if(_deserializeFile(file,maxFeatureVector))
-    {
-        std::cout << "Error Deserializing file" << std::endl;
-    }
-}
-*/
 FeatureVector* CreateFeatureVector(string file,const float* maxFeatureVector,int index, vector<cv::Mat> *dbFeatureVector)//, cv::Mat * dbDescriptors)
 {
     // Read in file, deserialize vector to object
@@ -48,21 +40,19 @@ FeatureVector* CreateFeatureVector(string file,const float* maxFeatureVector,int
     // read in vector values and normalize values using the input maxFeatureVector values
     float tmpValue;
     cv::Mat tmpMat (1,162,CV_32FC1);
-
+    float tmpNorm=0.0;
     for (i=0; i<json_array_size(jsonFeatureVector); i++)
     {
         tmpValue = maxFeatureVector[i] != 0 ? (float)json_real_value(json_array_get(jsonFeatureVector,i))/maxFeatureVector[i] : 0.0;
-        //tmpValue = (float) json_real_value(json_array_get(jsonFeatureVector,i))/maxFeatureVector[i];
         tmpMat.row(0).col(i) = tmpValue;
+        tmpNorm += pow(tmpValue,2.0);
         tmpFeatureVector.push_back(tmpValue);
     }
 
 
 
-//    cout << "index = " << index << " file name " << outputVector->FileName << endl;
     (*dbFeatureVector).push_back(tmpMat);
-    //cv::Mat indexRow = dbDescriptors.rows(index);
-    //tmpMat.copyTo(indexRow);
+    outputVector->L2Norm=sqrt(tmpNorm);
     outputVector->vectorIndex = index;
     json_decref(jsonFeatureVector);
     json_decref(jsonFileName);

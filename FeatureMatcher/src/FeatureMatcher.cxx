@@ -1,4 +1,5 @@
 #include "cv.h"
+#include <math.h>
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
@@ -13,11 +14,11 @@
 #include "FeatureVector.hxx"
 #include "opencv2/features2d/features2d.hpp"
 #include "opencv2/highgui/highgui.hpp"
-
 #include <flann/flann.hpp>
-//#include <flann/io/hdf5.h
+#include <boost/pending/disjoint_sets.hpp>
+#include "DisjointSetWrapper.hxx"
+#include <boost/unordered_map.hpp>
 
-//#include "FeatureVector.hpp"
 
 using namespace cv;
 using namespace std;
@@ -27,27 +28,33 @@ int getfiles(string dir,vector<string> &files,float** MaxFeatureVector);
 void createFilePath(char * destination[], const char* directory, const char * file);
 void createFilePath(char * destination[], string directory, const char * file);
 int createMaxFeatureVector(float** featureVector, const char* filePath);
+int SerializeResult(string matchFileName,vector<string> matchedFiles,char * outputFileName);
+template <typename Rank, typename Parent>
+boost::disjoint_sets<Rank,Parent> algo(Rank& r, Parent& p, std::vector<string>& elements);
 
 vector<cv::Mat> buildMask(int images);
 
 int errno;
-
+const int BINS = 162;
 
 
 int main(int argc, char** argv)
 {
-    if (argc != 2)
+    if (argc != 3)
     {
         usage();
         return -1;
     }
-     time_t  t0, t1; /* time_t is defined on <time.h> and <sys/types.h> as long */
-  clock_t c0, c1; /* clock_t is defined on <time.h> and <sys/types.h> as int */
-  t0 = time(NULL);
-  c0 = clock();
 
-  cout << "begin (wall):            "<<  t0 << endl;
-  cout <<"begin (CPU):             " <<c0 << endl;
+    string outputFolder = argv[2];
+
+    time_t  t0, t1; /* time_t is defined on <time.h> and <sys/types.h> as long */
+    clock_t c0, c1; /* clock_t is defined on <time.h> and <sys/types.h> as int */
+    t0 = time(NULL);
+    c0 = clock();
+
+    cout << "begin (wall):            "<<  t0 << endl;
+    cout <<"begin (CPU):             " <<c0 << endl;
 
     //1. Deserialize json files
     vector<string> files = vector<string>();
@@ -66,105 +73,151 @@ int main(int argc, char** argv)
 
     int fileIndex;
     vector<FeatureVector*> featureVectors = vector<FeatureVector*>();
-    cout << "Deserializing files [";
-    for (fileIndex=0;fileIndex<files.size();fileIndex++)
+    cout << "Deserializing files :"<<endl;
+    int percentage = 10;
+    for (fileIndex=0; fileIndex<files.size(); fileIndex++)
     {
         featureVectors.push_back(CreateFeatureVector(files[fileIndex],MaxFeatureVector,fileIndex,&dbFeatureVectors));
-        if (fileIndex % 1000==0) { cout << fileIndex << endl;}
-        //cout << "index " << fileIndex << endl;
+        if (fileIndex/files.size() >= percentage)
+        {
+            cout << percentage <<"%" << endl;
+            percentage += 10;
+        }
     }
-    cout << "]" << endl;
+    cout << "Deserialization Complete" << endl;
 
     int i;
-
-
-
-
-
-
-    FlannBasedMatcher m;
-    vector< DMatch>  ma;
-/*
-    m.match(dbDescriptors.row(0),dbDescriptors,ma);
-
-        for (i=0;i<ma.size();i++)
-        {
-            cout << "file " << ma[i].trainIdx << "or" << ma[i].imgIdx << endl;
-            cout << featureVectors[ma[i].imgIdx]->FileName << endl;
-            //cout << " " << featureVectors[matches[i].trainIdx]->FileName  << " or " << featureVectors[matches[i].imgIdx]->FileName<< endl;
-
-        }
-
-*/
-    FlannBasedMatcher matcher;
-    cv::BruteForceMatcher<cv::L2<float> > bruteMatcher;
-    bruteMatcher.add(dbFeatureVectors);
-
-    matcher.add(dbFeatureVectors);
-
-    matcher.train();
-    std::vector<cv::DMatch > matches;
-    vector<DMatch> bruteMatches;
-
-
-
-    int index;
-/*
-    for (index=0;index<dbFeatureVectors[0].size[0];index++)
+    float MaxFeatureVectorNorm = 0.0;
+    for (i=0; i<BINS; i++)
     {
-        cout << (dbFeatureVectors[0]).at<float>(index,0) << endl;
-    }*/
+        MaxFeatureVectorNorm += pow(MaxFeatureVector[i],2.0);
+    }
+    MaxFeatureVectorNorm = sqrt(MaxFeatureVectorNorm);
+
+    FlannBasedMatcher matcher;
+
+    std::vector<cv::DMatch > matches;
+    vector<vector<cv::DMatch> > kMatches ;
+    vector<vector<cv::DMatch> > rMatches;
+    matcher.add(dbFeatureVectors);
+    cout <<"here"<<endl;
+    matcher.train();
 
 
+    int vectorIndex;
 
- //   for (fileIndex=0;fileIndex<1;fileIndex++)
-   // {
-   vector<cv::Mat> mask = buildMask(dbFeatureVectors.size());
-    vector<cv::Mat> tmpMask =  vector<cv::Mat>();
-    tmpMask.push_back(mask[0]);
-   for (i=0;i<mask.size();i++)
-   {
-  //     cout << mask[i].row(0).col(0) << " " << mask[i].row(0).col(1) << " " << endl;
-   }
+    typedef std::map<string,std::size_t> rank_t; // => order on Element
+    typedef std::map<string,string> parent_t;
+    rank_t rank_map;
+    parent_t parent_map;
 
-    cout << featureVectors[1]->FileName << endl;
+    boost::associative_property_map<rank_t>   rank_pmap(rank_map);
+    boost::associative_property_map<parent_t> parent_pmap(parent_map);
+    vector<string> fileNameList = vector<string>();
 
-        matcher.match(dbFeatureVectors[1],matches,mask);
-        vector<vector<cv::DMatch> > kMatches ;
-        matcher.knnMatch(dbFeatureVectors[1],kMatches,50,tmpMask);
+    for (vectorIndex=0;vectorIndex<featureVectors.size();vectorIndex++)
+    {
+        fileNameList.push_back(featureVectors[vectorIndex]->FileName);
+    }
 
-        for (i=0;i<kMatches[0].size();i++)
+    boost::disjoint_sets<boost::associative_property_map<rank_t> ,boost::associative_property_map<parent_t> > dset = algo(rank_pmap, parent_pmap, fileNameList);
+
+    for (vectorIndex=0; vectorIndex<featureVectors.size(); vectorIndex+=1)
+    {
+        //cout << featureVectors[vectorIndex]->FileName << endl;
+
+        //cout << "matching" << endl;
+        //matcher.match(dbFeatureVectors[5],matches,mask);
+        matcher.knnMatch(dbFeatureVectors[vectorIndex],kMatches,2);
+        float searchRadius = featureVectors[vectorIndex]->L2Norm/MaxFeatureVectorNorm;
+
+        matcher.radiusMatch(dbFeatureVectors[vectorIndex],rMatches,searchRadius);
+
+        vector<string> fileNames = vector<string>();
+        string referenceFile = featureVectors[vectorIndex]->FileName;
+        for (i=1; i<rMatches[0].size(); i++)
         {
-            cout << "file " << kMatches[0][i].trainIdx << "or " << kMatches[0][i].imgIdx << endl;
-            cout << "file path " << featureVectors[kMatches[0][i].imgIdx]->FileName << endl;
+            if (strcmp((featureVectors[rMatches[0][i].imgIdx]->FileName),((featureVectors[vectorIndex]->FileName) ))!= 0)
+            {
+                string foundValue = (featureVectors[rMatches[0][i].imgIdx]->FileName);
+
+                if (dset.find_set(referenceFile) != dset.find_set(foundValue))
+                {
+                    // union sets
+                    dset.union_set(foundValue,referenceFile);
+                }
+                string matchedFile(featureVectors[rMatches[0][i].imgIdx]->FileName);
+                fileNames.push_back(matchedFile);
+            }
+            // serialise file using JANSSON
         }
-        //bruteMatcher.match (dbDescriptors,bruteMatches);
-        if (fileIndex % 1000==0) { cout << fileIndex << endl;}
-       // int i;
 
-       cout << "number of matches" << matches.size() << endl;
-        cout << "k matches " << kMatches[0].size() << endl;
-        for (i=0;i<matches.size();i++)
+        /*if (fileNames.size() > 0)
         {
-            cout << "file " << matches[i].trainIdx << "or" << matches[i].imgIdx << "with query " << matches[i].queryIdx<< endl;
-            int j;
-            //for (j=0;j<matcher.getTrainDescriptors()[matches[i].trainIdx].size().width;j++)
-            //{
-            //    cout << matcher.getTrainDescriptors()[matches[i].queryIdx].row(0).col(j) << " " << matcher.getTrainDescriptors()[matches[i].trainIdx].row(0).col(j) << endl;
-            //}
-            cout << featureVectors[matches[i].trainIdx]->FileName << endl;
-            //cout << " " << featureVectors[matches[i].trainIdx]->FileName  << " or " << featureVectors[matches[i].imgIdx]->FileName<< endl;
+            stringstream outputStream;
+            outputStream << vectorIndex;
+            string output = outputFolder;
+            output.append(outputStream.str());
+            output.append(".json");
+            SerializeResult(featureVectors[vectorIndex]->FileName,fileNames,(char*)output.c_str());
+        }*/
+
+        /*
+            cout << "knn matches" << endl;
+            for (i=0; i<kMatches[0].size(); i++)
+            {
+                float dist = 0.0;
+                int j;
+                for (j=0;j<BINS;j++)
+                {
+                    dist+= pow(dbFeatureVectors[kMatches[0][i].imgIdx].at<float>(0,j)-dbFeatureVectors[vectorIndex].at<float>(0,j),2.0);
+                }
+                dist = sqrt(dist);
+                cout << "file " << kMatches[0][i].trainIdx << "or " << kMatches[0][i].imgIdx << " distance = "<<dist<< endl;
+                cout << "file path " << featureVectors[kMatches[0][i].imgIdx]->FileName << endl;
+            }
+            */
+    }
+
+    Hash fileNameCluster;
+
+    vector<string> parentList = vector<string>();
+    for (vectorIndex=0;vectorIndex<featureVectors.size();vectorIndex++)
+    {
+        string fileName = featureVectors[vectorIndex]->FileName;
+        string parentName = dset.find_set(fileName);
+        if (fileNameCluster.find(parentName)==fileNameCluster.end())
+        {
+            //cout << "added";
+            parentList.push_back(parentName);
+            // not in hash, add to hash
+            AddNewDisjointSetWrapper(parentName, fileNameCluster);
+
+            //cout << (fileNameCluster.at(parentName)).Elements[0] << endl;
         }
-        cout << endl << endl;
-/*
-        for (i=0;i<bruteMatches.size();i++)
+        if (fileName.compare(parentName) != 0)
         {
-             cout << "brute file " << bruteMatches[i].trainIdx << "or" << bruteMatches[i].imgIdx;
-            cout << " " << featureVectors[bruteMatches[i].imgIdx]->FileName  << " or " << featureVectors[bruteMatches[i].imgIdx]->FileName<< endl;
+            // add file if the file name is not the parent
+            AddNewElementToDisjointSet(parentName,fileName,fileNameCluster);
+        }
+    }
 
-        } */
-    // }
-    FileStorage fs("test.yml",FileStorage::WRITE);
+    for (vectorIndex=0;vectorIndex<parentList.size();vectorIndex++)
+    {
+        //cout << "Parent = " << parentList[vectorIndex] << endl;
+        DisjointSetWrapper wrapper = fileNameCluster[parentList[vectorIndex]];
+        if (wrapper.Elements.size()> 1)
+        {
+            stringstream outputStream;
+            outputStream << vectorIndex;
+            string output = outputFolder;
+            output.append(outputStream.str());
+            output.append(".json");
+            SerializeResult(parentList[vectorIndex],wrapper.Elements,(char*)output.c_str());
+        }
+    }
+    // need to serialize clusters
+    cout << endl << endl;
 
 
     // loop over files, deserialize
@@ -187,9 +240,8 @@ int main(int argc, char** argv)
 
 
 
-
-  t1 = time(NULL);
-  c1 = clock();
+    t1 = time(NULL);
+    c1 = clock();
     cout << "end (Wall):              " << t1 << endl;
     cout << "end (CPU):               " << c1 << endl;
     cout << "elapsed wall clock time: " << (t1 - t0) << endl;
@@ -274,11 +326,11 @@ vector<cv::Mat> buildMask(int images)
 
     int i,j;
 
-    for(i=0;i<images;i++)
+    for(i=0; i<images; i++)
     {
         cv::Mat mask (1,images,CV_32FC1);
 
-        for(j=0;j<images;j++)
+        for(j=0; j<images; j++)
         {
             mask.row(0).col(j)= (i==j ? 0.0:1.0);
 
@@ -309,5 +361,60 @@ void createFilePath(char * destination[], string directory, const char * file)
 
 void usage()
 {
-    std::cout << "Usage ./FeatureMatcher <Json Folder> " << std::endl;
+    std::cout << "Usage ./FeatureMatcher <Json Input Folder>" << std::endl;
+}
+
+/// SerializeResult:
+/// Takes a filename and writes out the results of
+/// a flann radius search.
+///
+///
+int SerializeResult(string matchFileName,vector<string> matchedFiles,char * outputFileName)
+{
+    // Since we are using a c library (jansson)
+    // all strings need to be converted to
+    // c strings (i.e char*) using the c_str() method
+    int i;
+    json_t* jsonFileMatches = json_object();
+    json_t* jsonFileName = json_string((char *)matchFileName.c_str());
+    json_t* jsonFileVector = json_array();
+    json_t* jsonMatchedFile;
+
+    for (i=0; i<matchedFiles.size(); i++)
+    {
+
+        jsonMatchedFile = json_string((char*)matchedFiles[i].c_str());
+        if (json_array_append_new(jsonFileVector,jsonMatchedFile))
+        {
+            cout << "Cannot append " << matchedFiles[i] << "to json array" << endl;
+            return 1;
+        }
+    }
+
+    // add both feature vector and file name to json object
+    json_object_set_new(jsonFileMatches,"FileName",jsonFileName);
+    json_object_set_new(jsonFileMatches,"FileMatches",jsonFileVector);
+
+    json_dump_file(jsonFileMatches,outputFileName,JSON_INDENT(2));
+
+
+    // need to call jansson specific free
+    json_object_clear(jsonFileMatches);
+
+
+    return 0;
+}
+
+template <typename Rank, typename Parent>
+boost::disjoint_sets<Rank,Parent> algo(Rank& r, Parent& p, std::vector<string>& elements)
+{
+    boost::disjoint_sets<Rank,Parent> dsets(r, p);
+    for (std::vector<string>::iterator e = elements.begin();
+            e != elements.end(); e++)
+    {
+
+        dsets.make_set(*e);
+    }
+
+    return dsets;
 }
