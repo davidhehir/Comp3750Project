@@ -1,0 +1,1394 @@
+../../ColorCorrelogram/build/src/main ../../../../TestData/HousingMarket/docs/images/ ../../../../TestData/HousingMarket/outputs/multiBatch/correlogram/ 1 > ../../../../TestData/HousingMarket/outputs/multiBatch/CorrelogramOutput.txt
+Correlogram complete
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/outputs/multiBatch/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/outputs/multiBatch/matches/10/ 10 >../../../../TestData/HousingMarket/outputs/multiBatch/10FeatureMatcherOutput.txt
+Feature Matcher Complete
+file: 0.json
+precision = 0.0006986265003 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 0.000153697830066 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 1.3972530006e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 0.000167670360072 recall = 1.0
+file: 0.json
+precision = 9.78077100421e-05 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 8.3835180036e-05 recall = 1.0
+file: 0.json
+precision = 9.78077100421e-05 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 8.3835180036e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 5.5890120024e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 1.3972530006e-05 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 0.00048903855021 recall = 1.0
+file: 0.json
+precision = 0.000978077100421 recall = 1.0
+file: 0.json
+precision = 0.000153697830066 recall = 1.0
+file: 0.json
+precision = 9.78077100421e-05 recall = 1.0
+file: 0.json
+precision = 5.5890120024e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 5.5890120024e-05 recall = 1.0
+file: 0.json
+precision = 5.5890120024e-05 recall = 1.0
+file: 0.json
+precision = 5.5890120024e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 9.78077100421e-05 recall = 1.0
+file: 0.json
+precision = 0.0006986265003 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 0.000153697830066 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 0.000223560480096 recall = 1.0
+file: 0.json
+precision = 0.0006986265003 recall = 1.0
+file: 0.json
+precision = 9.78077100421e-05 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 8.3835180036e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 0.0006986265003 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 0.0006986265003 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 8.3835180036e-05 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 0.0006986265003 recall = 1.0
+file: 0.json
+precision = 9.78077100421e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 8.3835180036e-05 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 5.5890120024e-05 recall = 1.0
+file: 0.json
+precision = 8.3835180036e-05 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 5.5890120024e-05 recall = 1.0
+file: 0.json
+precision = 9.78077100421e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 8.3835180036e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 0.000111780240048 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 0.000377258310162 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 0.000153697830066 recall = 1.0
+file: 0.json
+precision = 0.000125752770054 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 5.5890120024e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 4.1917590018e-05 recall = 1.0
+file: 0.json
+precision = 6.986265003e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+file: 0.json
+precision = 0.00013972530006 recall = 1.0
+file: 0.json
+precision = 2.7945060012e-05 recall = 1.0
+for tau = 10average precision = 0.000125752770054 average recall = 1.0
+variance: prec=2.92641885211e-08 rec=0.0
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/outputs/multiBatch/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/outputs/multiBatch/matches/11/ 11 >../../../../TestData/HousingMarket/outputs/multiBatch/11FeatureMatcherOutput.txt
+Feature Matcher Complete
+file: 0.json
+precision = 0.000697486259521 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 0.000153446977095 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 1.39497251904e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 0.000167396702285 recall = 1.0
+file: 0.json
+precision = 9.76480763329e-05 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 8.36983511425e-05 recall = 1.0
+file: 0.json
+precision = 9.76480763329e-05 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 8.36983511425e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 5.57989007617e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 1.39497251904e-05 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 0.000488240381664 recall = 1.0
+file: 0.json
+precision = 0.000976480763329 recall = 1.0
+file: 0.json
+precision = 0.000153446977095 recall = 1.0
+file: 0.json
+precision = 9.76480763329e-05 recall = 1.0
+file: 0.json
+precision = 5.57989007617e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 5.57989007617e-05 recall = 1.0
+file: 0.json
+precision = 5.57989007617e-05 recall = 1.0
+file: 0.json
+precision = 5.57989007617e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 9.76480763329e-05 recall = 1.0
+file: 0.json
+precision = 0.000697486259521 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 0.000153446977095 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 0.000223195603047 recall = 1.0
+file: 0.json
+precision = 0.000697486259521 recall = 1.0
+file: 0.json
+precision = 9.76480763329e-05 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 8.36983511425e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 0.000697486259521 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 0.000697486259521 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 8.36983511425e-05 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 0.000697486259521 recall = 1.0
+file: 0.json
+precision = 9.76480763329e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 8.36983511425e-05 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 5.57989007617e-05 recall = 1.0
+file: 0.json
+precision = 8.36983511425e-05 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 5.57989007617e-05 recall = 1.0
+file: 0.json
+precision = 9.76480763329e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 8.36983511425e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 0.000111597801523 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 0.000376642580141 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 0.000153446977095 recall = 1.0
+file: 0.json
+precision = 0.000125547526714 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 5.57989007617e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 4.18491755712e-05 recall = 1.0
+file: 0.json
+precision = 6.97486259521e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+file: 0.json
+precision = 0.000139497251904 recall = 1.0
+file: 0.json
+precision = 2.78994503808e-05 recall = 1.0
+for tau = 11average precision = 0.000125547526714 average recall = 1.0
+variance: prec=2.91687412666e-08 rec=0.0
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/outputs/multiBatch/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/outputs/multiBatch/matches/12/ 12 >../../../../TestData/HousingMarket/outputs/multiBatch/12FeatureMatcherOutput.txt
+Feature Matcher Complete
+file: 0.json
+precision = 0.000696330339113 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 0.000153192674605 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 1.39266067823e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 0.000167119281387 recall = 1.0
+file: 0.json
+precision = 9.74862474758e-05 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 8.35596406935e-05 recall = 1.0
+file: 0.json
+precision = 9.74862474758e-05 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 8.35596406935e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 5.5706427129e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 1.39266067823e-05 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 0.000487431237379 recall = 1.0
+file: 0.json
+precision = 0.000974862474758 recall = 1.0
+file: 0.json
+precision = 0.000153192674605 recall = 1.0
+file: 0.json
+precision = 9.74862474758e-05 recall = 1.0
+file: 0.json
+precision = 5.5706427129e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 5.5706427129e-05 recall = 1.0
+file: 0.json
+precision = 5.5706427129e-05 recall = 1.0
+file: 0.json
+precision = 5.5706427129e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 9.74862474758e-05 recall = 1.0
+file: 0.json
+precision = 0.000696330339113 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 0.000153192674605 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 0.000222825708516 recall = 1.0
+file: 0.json
+precision = 0.000696330339113 recall = 1.0
+file: 0.json
+precision = 9.74862474758e-05 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 8.35596406935e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 0.000696330339113 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 0.000696330339113 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 8.35596406935e-05 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 0.000696330339113 recall = 1.0
+file: 0.json
+precision = 9.74862474758e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 8.35596406935e-05 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 5.5706427129e-05 recall = 1.0
+file: 0.json
+precision = 8.35596406935e-05 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 5.5706427129e-05 recall = 1.0
+file: 0.json
+precision = 9.74862474758e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 8.35596406935e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 0.000111412854258 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 0.000376018383121 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 0.000153192674605 recall = 1.0
+file: 0.json
+precision = 0.00012533946104 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 5.5706427129e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 4.17798203468e-05 recall = 1.0
+file: 0.json
+precision = 6.96330339113e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+file: 0.json
+precision = 0.000139266067823 recall = 1.0
+file: 0.json
+precision = 2.78532135645e-05 recall = 1.0
+for tau = 12average precision = 0.00012533946104 average recall = 1.0
+variance: prec=2.9072140641e-08 rec=0.0
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/outputs/multiBatch/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/outputs/multiBatch/matches/13/ 13 >../../../../TestData/HousingMarket/outputs/multiBatch/13FeatureMatcherOutput.txt
+Feature Matcher Complete
+file: 0.json
+precision = 0.000695981403377 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 0.000153115908743 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 1.39196280675e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 0.00016703553681 recall = 1.0
+file: 0.json
+precision = 9.74373964728e-05 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 8.35177684052e-05 recall = 1.0
+file: 0.json
+precision = 9.74373964728e-05 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 8.35177684052e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 5.56785122702e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 1.39196280675e-05 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 0.000487186982364 recall = 1.0
+file: 0.json
+precision = 0.000974373964728 recall = 1.0
+file: 0.json
+precision = 0.000153115908743 recall = 1.0
+file: 0.json
+precision = 9.74373964728e-05 recall = 1.0
+file: 0.json
+precision = 5.56785122702e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 5.56785122702e-05 recall = 1.0
+file: 0.json
+precision = 5.56785122702e-05 recall = 1.0
+file: 0.json
+precision = 5.56785122702e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 9.74373964728e-05 recall = 1.0
+file: 0.json
+precision = 0.000695981403377 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 0.000153115908743 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 0.000222714049081 recall = 1.0
+file: 0.json
+precision = 0.000695981403377 recall = 1.0
+file: 0.json
+precision = 9.74373964728e-05 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 8.35177684052e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 0.000695981403377 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 0.000695981403377 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 8.35177684052e-05 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 0.000695981403377 recall = 1.0
+file: 0.json
+precision = 9.74373964728e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 8.35177684052e-05 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 5.56785122702e-05 recall = 1.0
+file: 0.json
+precision = 8.35177684052e-05 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 5.56785122702e-05 recall = 1.0
+file: 0.json
+precision = 9.74373964728e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 8.35177684052e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 0.00011135702454 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 0.000375829957824 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 0.000153115908743 recall = 1.0
+file: 0.json
+precision = 0.000125276652608 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 5.56785122702e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 4.17588842026e-05 recall = 1.0
+file: 0.json
+precision = 6.95981403377e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+file: 0.json
+precision = 0.000139196280675 recall = 1.0
+file: 0.json
+precision = 2.78392561351e-05 recall = 1.0
+for tau = 13average precision = 0.000125276652608 average recall = 1.0
+variance: prec=2.90430114576e-08 rec=0.0
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/outputs/multiBatch/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/outputs/multiBatch/matches/14/ 14 >../../../../TestData/HousingMarket/outputs/multiBatch/14FeatureMatcherOutput.txt
+Feature Matcher Complete
+file: 0.json
+precision = 0.000695768336975 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 0.000153069034134 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 1.39153667395e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 0.000166984400874 recall = 1.0
+file: 0.json
+precision = 9.74075671764e-05 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 8.34922004369e-05 recall = 1.0
+file: 0.json
+precision = 9.74075671764e-05 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 8.34922004369e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 5.5661466958e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 1.39153667395e-05 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 0.000487037835882 recall = 1.0
+file: 0.json
+precision = 0.000974075671764 recall = 1.0
+file: 0.json
+precision = 0.000153069034134 recall = 1.0
+file: 0.json
+precision = 9.74075671764e-05 recall = 1.0
+file: 0.json
+precision = 5.5661466958e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 5.5661466958e-05 recall = 1.0
+file: 0.json
+precision = 5.5661466958e-05 recall = 1.0
+file: 0.json
+precision = 5.5661466958e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 9.74075671764e-05 recall = 1.0
+file: 0.json
+precision = 0.000695768336975 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 0.000153069034134 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 0.000222645867832 recall = 1.0
+file: 0.json
+precision = 0.000695768336975 recall = 1.0
+file: 0.json
+precision = 9.74075671764e-05 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 8.34922004369e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 0.000695768336975 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 0.000695768336975 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 8.34922004369e-05 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 0.000695768336975 recall = 1.0
+file: 0.json
+precision = 9.74075671764e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 8.34922004369e-05 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 5.5661466958e-05 recall = 1.0
+file: 0.json
+precision = 8.34922004369e-05 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 5.5661466958e-05 recall = 1.0
+file: 0.json
+precision = 9.74075671764e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 8.34922004369e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 0.000111322933916 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 0.000375714901966 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 0.000153069034134 recall = 1.0
+file: 0.json
+precision = 0.000125238300655 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 5.5661466958e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 4.17461002185e-05 recall = 1.0
+file: 0.json
+precision = 6.95768336975e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+file: 0.json
+precision = 0.000139153667395 recall = 1.0
+file: 0.json
+precision = 2.7830733479e-05 recall = 1.0
+for tau = 14average precision = 0.000125238300655 average recall = 1.0
+variance: prec=2.90252318367e-08 rec=0.0
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/outputs/multiBatch/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/outputs/multiBatch/matches/15/ 15 >../../../../TestData/HousingMarket/outputs/multiBatch/15FeatureMatcherOutput.txt
+Feature Matcher Complete
+file: 0.json
+precision = 0.000695758655238 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 0.000153066904152 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 1.39151731048e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 0.000166982077257 recall = 1.0
+file: 0.json
+precision = 9.74062117333e-05 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 8.34910386285e-05 recall = 1.0
+file: 0.json
+precision = 9.74062117333e-05 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 8.34910386285e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 5.5660692419e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 1.39151731048e-05 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 0.000487031058666 recall = 1.0
+file: 0.json
+precision = 0.000974062117333 recall = 1.0
+file: 0.json
+precision = 0.000153066904152 recall = 1.0
+file: 0.json
+precision = 9.74062117333e-05 recall = 1.0
+file: 0.json
+precision = 5.5660692419e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 5.5660692419e-05 recall = 1.0
+file: 0.json
+precision = 5.5660692419e-05 recall = 1.0
+file: 0.json
+precision = 5.5660692419e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 9.74062117333e-05 recall = 1.0
+file: 0.json
+precision = 0.000695758655238 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 0.000153066904152 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 0.000222642769676 recall = 1.0
+file: 0.json
+precision = 0.000695758655238 recall = 1.0
+file: 0.json
+precision = 9.74062117333e-05 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 8.34910386285e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 0.000695758655238 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 0.000695758655238 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 8.34910386285e-05 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 0.000695758655238 recall = 1.0
+file: 0.json
+precision = 9.74062117333e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 8.34910386285e-05 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 5.5660692419e-05 recall = 1.0
+file: 0.json
+precision = 8.34910386285e-05 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 5.5660692419e-05 recall = 1.0
+file: 0.json
+precision = 9.74062117333e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 8.34910386285e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 0.000111321384838 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 0.000375709673828 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 0.000153066904152 recall = 1.0
+file: 0.json
+precision = 0.000125236557943 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 5.5660692419e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 4.17455193143e-05 recall = 1.0
+file: 0.json
+precision = 6.95758655238e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+file: 0.json
+precision = 0.000139151731048 recall = 1.0
+file: 0.json
+precision = 2.78303462095e-05 recall = 1.0
+for tau = 15average precision = 0.000125236557943 average recall = 1.0
+variance: prec=2.902442406e-08 rec=0.0
