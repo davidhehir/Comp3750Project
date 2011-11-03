@@ -27,6 +27,8 @@ struct FeatureVector
 
 FeatureVector* CreateFeatureVector(std::string,const float*,int, std::vector<cv::Mat> *);
 
+void CreateFeatureVectors(std::string file,float ** maxFeatureVector,std::vector<cv::Mat> *dbFeatureVector,std::vector<FeatureVector*> * featureVectors);
+
 int _deserializeFile(std::string file, const double* maxFeatureVector);
 
 /*class FeatureVector

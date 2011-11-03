@@ -1,3 +1,20 @@
+/**
+*   @file FeatureMatcher.cxx
+    @brief Calculates the matches given an input set of correlogram feature vectors
+    @author David Hehir
+
+    This program calculates the matches of feature vectors from an input JSON file.
+    This JSON file is assumed to contain a max feature vector along with the set of
+    feature vectors to match (along with file names as unique identifiers. The program
+    takes 3 input command line arguments <Json Input File> <output json folder> <tau value>.
+    The Json Input File is the file that contains all fo the data calculated from the colour
+    correlogram program. The output json folder is the location where all the matches (serialized as
+    individual json files) are written out to. Finally, the value of tau is a parameter that alters the
+    search radius distance.
+
+
+**/
+
 #include "cv.h"
 #include <math.h>
 #include <stdio.h>
@@ -40,12 +57,16 @@ const int BINS = 162;
 
 int main(int argc, char** argv)
 {
-    if (argc != 3)
+    int i,j;
+
+    if (argc != 4)
     {
         usage();
         return -1;
     }
 
+    //
+    const float TAU = atof(argv[3]);
     string outputFolder = argv[2];
 
     time_t  t0, t1; /* time_t is defined on <time.h> and <sys/types.h> as long */
@@ -59,35 +80,48 @@ int main(int argc, char** argv)
     //1. Deserialize json files
     vector<string> files = vector<string>();
     string jsonFiles = argv[1];
-    // holder for feature vector values
-    // bins is currently hard coded, can I expose this somewhere else?
-    float* MaxFeatureVector = (float*) malloc(sizeof(float)*162);
+
+    // array of max value for each bins
+    float* MaxFeatureVector;
     // read json files from directory
 
-    if (getfiles(jsonFiles,files,&MaxFeatureVector))
-    {
-        cout << "Cannot read files from directory correctly" << endl;
-        return 1;
-    }
+    // set of all read in feature vectors
     vector<cv::Mat> dbFeatureVectors = vector<cv::Mat>();
+
 
     int fileIndex;
     vector<FeatureVector*> featureVectors = vector<FeatureVector*>();
-    cout << "Deserializing files :"<<endl;
-    int percentage = 10;
-    for (fileIndex=0; fileIndex<files.size(); fileIndex++)
-    {
-        featureVectors.push_back(CreateFeatureVector(files[fileIndex],MaxFeatureVector,fileIndex,&dbFeatureVectors));
-        if (fileIndex/files.size() >= percentage)
-        {
-            cout << percentage <<"%" << endl;
-            percentage += 10;
-        }
-    }
-    cout << "Deserialization Complete" << endl;
 
-    int i;
+    CreateFeatureVectors(jsonFiles,&MaxFeatureVector,&dbFeatureVectors,&featureVectors);
+
+    cout << "Deserialization Complete. Deserialized :" << featureVectors.size() << " files" << endl;
+
+    float tmpValue, L2Norm = 0.0;
+
+    // Normalise all the feature vectors in dbFeatureVector
+    // with the MaxFeatureVector
+    for (i=0; i<featureVectors.size(); i++)
+    {
+        L2Norm = 0.0;
+        // normalize files
+        for (j=0; j<BINS; j++)
+        {
+            if (MaxFeatureVector[j] > 0.0)
+            {
+                tmpValue = dbFeatureVectors[i].at<float>(0,j)/MaxFeatureVector[j];
+                dbFeatureVectors[i].row(0).col(j) = tmpValue;
+
+            }
+
+            L2Norm += pow(dbFeatureVectors[i].at<float>(0,j),2.0);
+        }
+        // Store L2 Norm for later date
+        featureVectors[i]->L2Norm = sqrt(L2Norm);
+    }
+
     float MaxFeatureVectorNorm = 0.0;
+
+    // calculate MaxFeatureVector L2 Norm
     for (i=0; i<BINS; i++)
     {
         MaxFeatureVectorNorm += pow(MaxFeatureVector[i],2.0);
@@ -99,9 +133,8 @@ int main(int argc, char** argv)
     std::vector<cv::DMatch > matches;
     vector<vector<cv::DMatch> > kMatches ;
     vector<vector<cv::DMatch> > rMatches;
+
     matcher.add(dbFeatureVectors);
-    cout <<"here"<<endl;
-    matcher.train();
 
 
     int vectorIndex;
@@ -115,7 +148,7 @@ int main(int argc, char** argv)
     boost::associative_property_map<parent_t> parent_pmap(parent_map);
     vector<string> fileNameList = vector<string>();
 
-    for (vectorIndex=0;vectorIndex<featureVectors.size();vectorIndex++)
+    for (vectorIndex=0; vectorIndex<featureVectors.size(); vectorIndex++)
     {
         fileNameList.push_back(featureVectors[vectorIndex]->FileName);
     }
@@ -124,13 +157,12 @@ int main(int argc, char** argv)
 
     for (vectorIndex=0; vectorIndex<featureVectors.size(); vectorIndex+=1)
     {
-        //cout << featureVectors[vectorIndex]->FileName << endl;
+        //matcher.knnMatch(dbFeatureVectors[vectorIndex],kMatches,2);
+        matcher.train();
 
-        //cout << "matching" << endl;
-        //matcher.match(dbFeatureVectors[5],matches,mask);
-        matcher.knnMatch(dbFeatureVectors[vectorIndex],kMatches,2);
-        float searchRadius = featureVectors[vectorIndex]->L2Norm/MaxFeatureVectorNorm;
-
+        float searchRadius = TAU*featureVectors[vectorIndex]->L2Norm/MaxFeatureVectorNorm;
+        //cout << "Image file " << featureVectors[vectorIndex]->FileName <<" Search Radius " << searchRadius <<
+        //    "l2 norm " << featureVectors[vectorIndex]->L2Norm << " max vector l2 " << MaxFeatureVectorNorm<< endl;
         matcher.radiusMatch(dbFeatureVectors[vectorIndex],rMatches,searchRadius);
 
         vector<string> fileNames = vector<string>();
@@ -151,38 +183,12 @@ int main(int argc, char** argv)
             }
             // serialise file using JANSSON
         }
-
-        /*if (fileNames.size() > 0)
-        {
-            stringstream outputStream;
-            outputStream << vectorIndex;
-            string output = outputFolder;
-            output.append(outputStream.str());
-            output.append(".json");
-            SerializeResult(featureVectors[vectorIndex]->FileName,fileNames,(char*)output.c_str());
-        }*/
-
-        /*
-            cout << "knn matches" << endl;
-            for (i=0; i<kMatches[0].size(); i++)
-            {
-                float dist = 0.0;
-                int j;
-                for (j=0;j<BINS;j++)
-                {
-                    dist+= pow(dbFeatureVectors[kMatches[0][i].imgIdx].at<float>(0,j)-dbFeatureVectors[vectorIndex].at<float>(0,j),2.0);
-                }
-                dist = sqrt(dist);
-                cout << "file " << kMatches[0][i].trainIdx << "or " << kMatches[0][i].imgIdx << " distance = "<<dist<< endl;
-                cout << "file path " << featureVectors[kMatches[0][i].imgIdx]->FileName << endl;
-            }
-            */
     }
 
     Hash fileNameCluster;
 
     vector<string> parentList = vector<string>();
-    for (vectorIndex=0;vectorIndex<featureVectors.size();vectorIndex++)
+    for (vectorIndex=0; vectorIndex<featureVectors.size(); vectorIndex++)
     {
         string fileName = featureVectors[vectorIndex]->FileName;
         string parentName = dset.find_set(fileName);
@@ -202,7 +208,7 @@ int main(int argc, char** argv)
         }
     }
 
-    for (vectorIndex=0;vectorIndex<parentList.size();vectorIndex++)
+    for (vectorIndex=0; vectorIndex<parentList.size(); vectorIndex++)
     {
         //cout << "Parent = " << parentList[vectorIndex] << endl;
         DisjointSetWrapper wrapper = fileNameCluster[parentList[vectorIndex]];
@@ -248,6 +254,8 @@ int main(int argc, char** argv)
     cout << "\telapsed CPU time:        "<< (c1 - c0)/CLOCKS_PER_SEC << endl;
 
 }
+
+
 
 
 int getfiles(string dir,vector<string> & files, float ** MaxFeatureVector)
@@ -354,21 +362,30 @@ void createFilePath(char * destination[], const char* directory, const char * fi
     strcat((*destination),file);
 }
 
+/** createFilePath:
+
+*/
 void createFilePath(char * destination[], string directory, const char * file)
 {
     createFilePath(destination,directory.c_str(),file);
 }
 
+/** usage:
+    @brief: Helper function to write out command line usage
+*/
 void usage()
 {
-    std::cout << "Usage ./FeatureMatcher <Json Input Folder>" << std::endl;
+    std::cout << "Usage ./FeatureMatcher <Json Input Folder> <output json folder> <tau value> " << std::endl;
 }
 
-/// SerializeResult:
-/// Takes a filename and writes out the results of
-/// a flann radius search.
-///
-///
+/** SerializeResult:
+    @brief Given a list of matched files, write them out to disk (as given)
+    @param[in] matchFileName: Parent image file name of the set
+    @param[in] matchedFiles: vector of file names that are to be written out to disk
+    @param[in] outputFileName: output location where jansson will write the file to
+    @return integer representing success of failure
+
+*/
 int SerializeResult(string matchFileName,vector<string> matchedFiles,char * outputFileName)
 {
     // Since we are using a c library (jansson)
@@ -395,20 +412,29 @@ int SerializeResult(string matchFileName,vector<string> matchedFiles,char * outp
     json_object_set_new(jsonFileMatches,"FileName",jsonFileName);
     json_object_set_new(jsonFileMatches,"FileMatches",jsonFileVector);
 
+    // write the serialized result out to file as specified
     json_dump_file(jsonFileMatches,outputFileName,JSON_INDENT(2));
 
 
     // need to call jansson specific free
     json_object_clear(jsonFileMatches);
 
-
+    // success!
     return 0;
 }
 
+/* @brief function to build a set based on
+    @param[in] r: disjoint set rank
+    @param[in] p: disjoint set parent
+    @param[in] elements: vector containing file names of images that are considered a match
+    @returns: a new disjoint set containing the strings in elements
+
+*/
 template <typename Rank, typename Parent>
 boost::disjoint_sets<Rank,Parent> algo(Rank& r, Parent& p, std::vector<string>& elements)
 {
     boost::disjoint_sets<Rank,Parent> dsets(r, p);
+    // build the set for each element within the input vector elements
     for (std::vector<string>::iterator e = elements.begin();
             e != elements.end(); e++)
     {

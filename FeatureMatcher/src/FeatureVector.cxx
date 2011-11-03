@@ -6,6 +6,77 @@
 using namespace std;
 using namespace cv;
 
+const int BINS = 162;
+
+void CreateFeatureVectors(string file,float ** maxFeatureVector,vector<cv::Mat> *dbFeatureVector,vector<FeatureVector*> * featureVectors)
+{
+    json_t *json;
+    json_error_t error;
+    json_t * jsonFeatureVector;
+    json_t* jsonFeatureVectorValues;
+    json_t* jsonFileName;
+    FeatureVector* deserializedVector;
+    int i=0,j,index=0;
+    char* cFile = (char*)file.c_str();
+    // create new output matrix vector
+    (*maxFeatureVector) = (float*) malloc(sizeof(float)*BINS);
+    // json should be an array, though not sure how to get the length
+    json = json_load_file(cFile,0, &error);
+
+    if(!json)
+    {
+        std::cout << "Error readining in file " << file << " jansson error: " << error.text << " at line " << error.line << std::endl;
+    }
+
+    jsonFeatureVector = json_array_get(json,i);
+
+    while (jsonFeatureVector != NULL)
+    {
+        // deserialize the individual feature vector
+        deserializedVector = (FeatureVector*)malloc(sizeof(FeatureVector));
+        jsonFeatureVectorValues = json_object_get(jsonFeatureVector,"FeatureVector");
+        jsonFileName = json_object_get(jsonFeatureVector,"FileName");
+
+        strcpy(deserializedVector->FileName,json_string_value(jsonFileName));
+
+        float tmpValue;
+
+
+        if (strcmp(deserializedVector->FileName,"MaxFeatureVector") == 0)
+        {
+            // instanciate max feature vector
+            for (j=0; j<json_array_size(jsonFeatureVectorValues); j++)
+            {
+                tmpValue = (float) json_real_value(json_array_get(jsonFeatureVectorValues,j));
+                (*maxFeatureVector)[j]= tmpValue;
+            }
+        }
+        else
+        {
+            cv::Mat tmpMat (1,162,CV_32FC1);
+            float tmpNorm=0.0;
+            for (j=0; j<json_array_size(jsonFeatureVectorValues); j++)
+            {
+                tmpValue = (float) json_real_value(json_array_get(jsonFeatureVectorValues,j));
+                tmpMat.row(0).col(j) = (float) json_real_value(json_array_get(jsonFeatureVectorValues,j));
+            }
+            (*dbFeatureVector).push_back(tmpMat);
+            deserializedVector->vectorIndex = index;
+            index++;
+            (*featureVectors).push_back(deserializedVector);
+        }
+        // update feature vector
+        i++;
+        jsonFeatureVector = json_array_get(json,i);
+    }
+
+    json_decref(jsonFeatureVectorValues);
+    json_decref(jsonFeatureVector);
+    json_decref(jsonFileName);
+    json_decref(json);
+
+}
+
 FeatureVector* CreateFeatureVector(string file,const float* maxFeatureVector,int index, vector<cv::Mat> *dbFeatureVector)//, cv::Mat * dbDescriptors)
 {
     // Read in file, deserialize vector to object
