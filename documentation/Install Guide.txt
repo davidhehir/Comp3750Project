@@ -1,0 +1,59 @@
+Installation Guide: 
+Author: David Hehir
+Date: 31/10/2011
+--------------------
+This install guide covers Linux systems only. All of the tools are said to be compatible with Windows, however, the code here has not been tested on a  windows machine.
+
+Prerequisites:
+--------------
+The following software must be installed prior to building and using
+the Colour correlogram and feature matcher tools.
+
+* OpenCV (min tested version 2.3.0)
+* Cmake (comes with OpenCV)
+* Jansson
+* 
+
+Installing OpenCV:
+-------------------
+A full install guide will not be presented here since it is well documented elsewhere on the internet. A guide I have found useful for installing OpenCV on ubuntu can be found here http://abhitak.wordpress.com/2009/08/29/installing-opencv-on-linux-ubuntu-9-04/
+
+If OpenCV is installed using the above method, CMake will also be automatically installed.
+
+Installing Jansson:
+------------------
+A full install guide for linux can be found here:
+http://www.digip.org/jansson/doc/2.2/gettingstarted.html#compiling-and-installing-jansson
+
+
+Building Code From Source:
+-------------------------
+After downloading the source from github, the code needs to be extracted using the following command:
+unzip davidhehir-Comp3750-5af7514.zip
+This will extract the files into the following file structure:
+root
+|->ColorCorrelogram
+|->FeatureMatcher
+|->Playground
+|->Comparer
+|->python
+|->Testfiles
+
+1.Building Colour Correlogram
+------------------------------:
+Go to the root of the folder ColorCorrelogram and type the following commands:
+cmake .
+make
+
+If everything was successfully built, there should be an executable in src/ and is called main
+
+2. Building Feature Matcher
+---------------------------
+At the project root folder type the following commands:
+cd FeatureMatcher
+mkdir build
+cd build
+cmake ../src/
+make
+
+This will build an executable called FeatureMatcher in the build folder.

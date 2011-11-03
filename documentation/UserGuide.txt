@@ -1,0 +1,29 @@
+User Guide: 
+Author: David Hehir
+Date: 31/10/2011
+--------------------
+
+The command line tools are fairly simple to use, requiring only a few parameters each.
+
+ColourCorrelogram:
+------------------
+This tool takes 3 input parameters:
+<Image Directory> <Output Directory> <radius>
+
+Image Directory: A folder of jpg images that the colour correlogram needs to be calculated for.
+The tool will recursively search though each file in the folder and calculate the correlogram (i.e. will calculate the correlogram for every file that is not . or .. in the linux file system).
+
+Output Directory: Where to write the serialized json file to. Currently is names MaxFeatureVector.json but can easily be renamed in the code.
+Note: The folder must exist before running the tool
+
+Radius: The search radius of the colour correlogram. Must be a whole integer number greater than 0
+
+
+FeatureMatcher:
+---------------
+The command line arguments required to use the feature matcher are as follows:
+ <Json Input File> <output json folder> <tau value>
+
+ Json Input File: The file produced by the Colour Correlogram Tool. Contains all of the serialized correlogram values for each image
+ 
+ output json folder: the folder location of where the serialized clusters of images names should be written to. Each cluster contains a list of iamges (specified by their file name as specified in the colour correlogram step).
