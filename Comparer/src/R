@@ -1,0 +1,111 @@
+../../ColorCorrelogram/build/src/main ../../../../TestData/HousingMarket/docs/images/ ../../../../TestData/HousingMarket/results/multi/correlogram/ 1 > ../../../../TestData/HousingMarket/results/multi/CorrelogramOutput.txt
+Correlogram complete
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.1/ 4.1 >../../../../TestData/HousingMarket/results/multi/4.1FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10442.0 precD 10780.0 recD 12648.0
+recall = 0.825585072739 precision = 0.968645640074
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.2/ 4.2 >../../../../TestData/HousingMarket/results/multi/4.2FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10443.0 precD 10827.0 recD 12648.0
+recall = 0.825664136622 precision = 0.964533111665
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.3/ 4.3 >../../../../TestData/HousingMarket/results/multi/4.3FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10474.0 precD 10874.0 recD 12648.0
+recall = 0.828115117015 precision = 0.963215008277
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.4/ 4.4 >../../../../TestData/HousingMarket/results/multi/4.4FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10382.0 precD 10808.0 recD 12648.0
+recall = 0.820841239722 precision = 0.960584752036
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.5/ 4.5 >../../../../TestData/HousingMarket/results/multi/4.5FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10515.0 precD 10947.0 recD 12648.0
+recall = 0.831356736243 precision = 0.960537133461
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.6/ 4.6 >../../../../TestData/HousingMarket/results/multi/4.6FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10719.0 precD 11233.0 recD 12648.0
+recall = 0.847485768501 precision = 0.954241965637
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.7/ 4.7 >../../../../TestData/HousingMarket/results/multi/4.7FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10766.0 precD 11337.0 recD 12648.0
+recall = 0.851201771031 precision = 0.94963394196
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.8/ 4.8 >../../../../TestData/HousingMarket/results/multi/4.8FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10754.0 precD 11366.0 recD 12648.0
+recall = 0.850253004428 precision = 0.946155199718
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/4.9/ 4.9 >../../../../TestData/HousingMarket/results/multi/4.9FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 10863.0 precD 11503.0 recD 12648.0
+recall = 0.858870967742 precision = 0.944362340259
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.1/ 5.1 >../../../../TestData/HousingMarket/results/multi/5.1FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11091.0 precD 11917.0 recD 12648.0
+recall = 0.876897533207 precision = 0.930687253503
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.2/ 5.2 >../../../../TestData/HousingMarket/results/multi/5.2FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11101.0 precD 12004.0 recD 12648.0
+recall = 0.877688172043 precision = 0.924775074975
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.3/ 5.3 >../../../../TestData/HousingMarket/results/multi/5.3FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11085.0 precD 12253.0 recD 12648.0
+recall = 0.876423149905 precision = 0.904676405778
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.4/ 5.4 >../../../../TestData/HousingMarket/results/multi/5.4FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11071.0 precD 12560.0 recD 12648.0
+recall = 0.875316255534 precision = 0.881449044586
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.5/ 5.5 >../../../../TestData/HousingMarket/results/multi/5.5FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11187.0 precD 13913.0 recD 12648.0
+recall = 0.884487666034 precision = 0.804068137713
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.6/ 5.6 >../../../../TestData/HousingMarket/results/multi/5.6FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11328.0 precD 14902.0 recD 12648.0
+recall = 0.895635673624 precision = 0.760166420615
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.7/ 5.7 >../../../../TestData/HousingMarket/results/multi/5.7FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11492.0 precD 16234.0 recD 12648.0
+recall = 0.908602150538 precision = 0.707897006283
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.8/ 5.8 >../../../../TestData/HousingMarket/results/multi/5.8FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11491.0 precD 17644.0 recD 12648.0
+recall = 0.908523086654 precision = 0.651269553389
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/5.9/ 5.9 >../../../../TestData/HousingMarket/results/multi/5.9FeatureMatcherOutput.txt
+Feature Matcher Complete
+true pairs=12648
+false pairs = 24638
+numerator 11524.0 precD 21332.0 recD 12648.0
+recall = 0.911132194813 precision = 0.540221263829
+../../FeatureMatcher/build/FeatureMatcher ../../../../TestData/HousingMarket/results/multi/correlogram/MaxFeatureVector.json ../../../../TestData/HousingMarket/results/multi/matches/6.1/ 6.1 >../../../../TestData/HousingMarket/results/multi/6.1FeatureMatcherOutpu

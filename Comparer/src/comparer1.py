@@ -25,6 +25,8 @@ def FindImageInJsonFiles(jsonFolder,imgId):
           return file
   return 'none'
 
+  
+
 
 def ReadTruthTable(path,fileName):
   ''' File format 
@@ -32,7 +34,6 @@ def ReadTruthTable(path,fileName):
   '''
   file = os.path.join(path,fileName)
   f = open(file,'r')
-  
   match = '(?P<imgId>\d*) .* (?P<imgInSet>\d*)'
   matcher = re.compile(match)
   lines = f.readlines()
@@ -45,16 +46,14 @@ def ReadTruthTable(path,fileName):
       imgId = m.group('imgId')
       if imgId:
         imgInSet = m.group('imgInSet')
-	  # what do i do with this information?
-        if imgInSet=='1':
+        # what do i do with this information?
+        if imgInSet:
           setStorage.InSet.append(imgId)
         else:
           setStorage.OutSet.append(imgId)
       
   f.close()
-
   return setStorage
-
 
 def FindTruePairs(truthStorage):
   pairs = []
@@ -78,7 +77,7 @@ def FindFalsePairs(truthStorage):
 
 
 if len(sys.argv) != 8:
-  print "Usage <Location of ColorCorrelogram> <Location of FeatureMatcher> <Input Images> <Output Folder> <search radius> <MaxTau> <truth file folder>"
+  print "Usage <Location of ColorCorrelogram> <Location of FeatureMatcher> <Input Images> <Output Images> <search radius> <tau> <truth file folder>"
 else:
 
   ColorCorrelogram = sys.argv[1]
@@ -101,61 +100,50 @@ else:
   for subdir,dirs, files in os.walk(truthFolder):
     for file in files:
       truthStorageList.append(ReadTruthTable(truthFolder,file))
-      
   
   correlogramCall = ColorCorrelogram + ' ' + inputImages + ' ' + correlogramFolder + ' ' + radius + ' > '+ outputFolder+'CorrelogramOutput.txt'
   print correlogramCall
   #os.system(correlogramCall)
   print "Correlogram complete"
+
+  featureMatcherCall = FeatureMatcher + ' ' + os.path.join(correlogramFolder,'MaxFeatureVector.json') + ' ' + featureMatcherFolder + ' ' + tau + ' >' + outputFolder+'FeatureMatcherOutput.txt'
+  print featureMatcherCall
+  #os.system(featureMatcherCall)
+  print 'Feature Matcher Complete'
+
+  avgPrec = 0.0
+  avgRecall = 0.0  
+  
+  numerator = 0.0
+  recallDenominator = 0.0
+  precDenominator = 0.0
+  
   truePairs = []
   falsePairs = []
   for truthStorage in truthStorageList:
-    	newPairs = FindTruePairs(truthStorage)
-    	for i in newPairs:
-          truePairs.append(i)  
-  for truthStorage in truthStorageList:
-    	newPairs = FindFalsePairs(truthStorage)
-    	for i in newPairs:
-       	  falsePairs.append(i)  
-    	
-  #tauVals = [4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9,5.1,5.2,5.3,5.4,5.5,5.6,5.7,5.8,5.9,6.1,6.2,6.3,6.4,6.5,6.6,6.7,6.8,6.9]
-  for j in range(0,int(tau)):
-	print j
-	i = j+1
-	tmpFolder = os.path.join(featureMatcherFolder,str(i)+'/')
-	
-	if not os.path.isdir(tmpFolder):
-	  os.mkdir(tmpFolder)
-  	featureMatcherCall = FeatureMatcher + ' ' + os.path.join(correlogramFolder,'MaxFeatureVector.json') + ' ' + tmpFolder + ' ' + str(i) + ' >' + 	outputFolder +str(i) +'FeatureMatcherOutput.txt' 
-  	print featureMatcherCall
-  	os.system(featureMatcherCall)
-  	print 'Feature Matcher Complete'
-
-  	numerator = 0.0
-  	recallDenominator = 0.0
-  	precDenominator = 0.0
+    newPairs = FindTruePairs(truthStorage)
+    for i in newPairs:
+      truePairs.append(i)  
   
+  for truthStorage in truthStorageList:
+    newPairs = FindFalsePairs(truthStorage)
+    for i in newPairs:
+      falsePairs.append(i)  
+    
+  for tPair in truePairs:
+    file1 = FindImageInJsonFiles(featureMatcherFolder,tPair[0])
+    file2 = FindImageInJsonFiles(featureMatcherFolder,tPair[1])  
+    if file1==file2:
+      numerator = numerator + 1.0
+      recallDenominator = recallDenominator + 1.0
+      precDenominator = precDenominator + 1.0
+    else:
+      recallDenominator = recallDenominator + 1.0
+  for fPair in falsePairs:
+    file1 = FindImageInJsonFiles(featureMatcherFolder,fPair[0])
+    file2 = FindImageInJsonFiles(featureMatcherFolder,fPair[1])  
+    if file1==file2:
+      precDenominator = precDenominator + 1.0  
 
-  	
-	print 'true pairs=' + str(len(truePairs))
-	print 'false pairs = ' + str(len(falsePairs))
-  	for tPair in truePairs:
-    		file1 = FindImageInJsonFiles(tmpFolder,tPair[0])
-    		file2 = FindImageInJsonFiles(tmpFolder,tPair[1])  
-    		if file1==file2:
-	      		numerator = numerator + 1.0
-	      		recallDenominator = recallDenominator + 1.0
-	      		precDenominator = precDenominator + 1.0
-	    	else:
-	      		recallDenominator = recallDenominator + 1.0
-	for fPair in falsePairs:
-	    	file1 = FindImageInJsonFiles(tmpFolder,fPair[0])
-	    	file2 = FindImageInJsonFiles(tmpFolder,fPair[1])  
-	    	if file1==file2:
-			if file1 != 'none':	      	
-				precDenominator = precDenominator + 1.0  
-
-	print 'numerator ' + str(numerator) + ' precD ' + str(precDenominator) + ' recD ' + str(recallDenominator)
-	print 'recall = ' + str(numerator/recallDenominator) + ' precision = ' + str(numerator/precDenominator)
-	
-  	
+  print 'numerator ' + str(numerator) + ' precD ' + str(precDenominator) + ' recD ' + str(recallDenominator)
+  print 'recall = ' + str(numerator/recallDenominator) + ' precision = ' + str(numerator/precDenominator)
